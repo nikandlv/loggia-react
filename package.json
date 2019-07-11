@@ -22,5 +22,8 @@
     "react-dom": "^16.8.6",
     "stylus": "^0.54.5",
     "url-loader": "^2.0.1"
+  },
+  "devDependencies": {
+    "lodash": ">=4.17.13"
   }
 }
