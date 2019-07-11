@@ -1,0 +1,26 @@
+{
+  "name": "nextjs-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@zeit/next-stylus": "^1.0.1",
+    "file-loader": "^4.0.0",
+    "next": "^8.1.0",
+    "normalize-stylus": "^1.0.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "stylus": "^0.54.5",
+    "url-loader": "^2.0.1"
+  }
+}
