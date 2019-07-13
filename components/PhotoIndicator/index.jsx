@@ -1,15 +1,10 @@
 import React from 'react'
-export default class PhotoIndicator extends React.Component {
-    state = {
-        status: 0,
-    }
-    render() {
-        const {status} = this.state
-        return (
-            <div className="photo-indicator">
-                <span className="number">1</span>
-                <span className="title">test</span>
-            </div>
-        )
-    }
-} 
+import { toPersian } from '../../utility/PersianDigits';
+export default function PhotoIndicator(props) {
+    return (
+        <div className={`photo-indicator ${(props.active?"active":"")}`}>
+            <span className="number">{toPersian(props.number)}</span>
+            <span className="title">{props.title}</span>
+        </div>
+    )
+}
