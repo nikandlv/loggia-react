@@ -2,7 +2,7 @@ import 'normalize-stylus/normalize.styl'
 import '../../resources/App.styl'
 export default function Wrapper(props) {
     return (
-        <div>
+        <div className="wrapper">
             {props.children}
         </div>
     )

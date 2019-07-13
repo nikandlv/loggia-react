@@ -1,9 +1,11 @@
 import Wrapper from '../components/Wrapper'
+import { Gallery } from '../components/Gallery';
+import { BottomBar } from '../components/BottomBar';
 export default function Index() {
 	return (
 		  <Wrapper>
-			  <h1>Welcome to NextJS boilerplate</h1>
-			  <a href="https://github.com/nikandlv/iran-react">Github repo</a>
+			  <Gallery />
+			  <BottomBar />
 		  </Wrapper>
 	);
 }
