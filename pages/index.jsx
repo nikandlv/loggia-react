@@ -53,7 +53,7 @@ export default class index extends React.Component {
     itemLoop = () => {
         window.setTimeout(()=> {
             let active = this.state.active
-            if(active === 10) {
+            if(active === 9) {
                 active = 0
             } else {
                 active += 1

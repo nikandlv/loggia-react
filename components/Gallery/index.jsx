@@ -4,7 +4,7 @@ export class Gallery extends React.Component {
     render() {
         return (
             <section className="gallery">
-                <PhotoZone />
+                <PhotoZone items={this.props.items} active={this.props.active} />
             </section>
         )
     }
