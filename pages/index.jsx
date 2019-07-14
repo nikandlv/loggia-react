@@ -8,43 +8,43 @@ export default class index extends React.Component {
 	items = [
 		{
 			title:"عکس شماره ۱",
-			image:"/static/img/shot-1.jpg"
+			photo:"/static/img/shot-1.jpg"
 		},
 		{
 			title:"عکس شماره ۲",
-			image:"/static/img/shot-2.jpg"
+			photo:"/static/img/shot-2.jpg"
 		},
 		{
 			title:"عکس شماره ۳",
-			image:"/static/img/shot-3.jpg"
+			photo:"/static/img/shot-3.jpg"
 		},
 		{
 			title:"عکس شماره ۴",
-			image:"/static/img/shot-4.jpg"
+			photo:"/static/img/shot-4.jpg"
 		},
 		{
 			title:"عکس شماره ۵",
-			image:"/static/img/shot-5.jpg"
+			photo:"/static/img/shot-5.jpg"
 		},
 		{
 			title:"عکس شماره ۶",
-			image:"/static/img/shot-6.jpg"
+			photo:"/static/img/shot-6.jpg"
 		},
 		{
 			title:"عکس شماره ۷",
-			image:"/static/img/shot-7.jpg"
+			photo:"/static/img/shot-7.jpg"
 		},
 		{
 			title:"عکس شماره ۸",
-			image:"/static/img/shot-8.jpg"
+			photo:"/static/img/shot-8.jpg"
 		},
 		{
 			title:"عکس شماره ۹",
-			image:"/static/img/shot-9.jpg"
+			photo:"/static/img/shot-9.jpg"
 		},
 		{
 			title:"عکس شماره ۱۰",
-			image:"/static/img/shot-10.jpg"
+			photo:"/static/img/shot-10.jpg"
 		}
 	]
 	componentDidMount() {
