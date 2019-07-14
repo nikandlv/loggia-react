@@ -1,18 +1,12 @@
 import React from 'react'
 import PhotoIndicator from '../PhotoIndicator';
 export class BottomBar extends React.Component {
-    items = [
-        "تهران",
-        "برج میلاد",
-        "بازار تهران",
-        "مسجد",
-    ]
     render() {
         return (
             <section className="bottom-bar">
-                {this.items.map((item,key) => {
+                {this.props.items.map((item,key) => {
                     return (
-                        <PhotoIndicator number={key} key={key} title={item} active={key === this.props.active} />
+                        <PhotoIndicator number={key} key={key} title={item.title} active={key === this.props.active} />
                     )
                 })}
                 <div className="expand-icon-wrapper">
