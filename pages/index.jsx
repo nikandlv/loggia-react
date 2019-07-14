@@ -62,7 +62,7 @@ export default class index extends React.Component {
                 active:active
             })
             this.itemLoop()
-        },3000)
+        },5000)
     }
 	render() {
 		return (
