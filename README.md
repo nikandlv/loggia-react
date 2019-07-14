@@ -1,23 +1,28 @@
-### Nextjs boilerplate
+### iran-react 
 
-#### Why
-
-because nextjs does not come with zero config for general features like
-
-* Styling solution
-* File loader
-* SSR config
-* assets prefix
-* folder structure
-* in style url
-* sub directory support
+iran is a web gallery
 
 #### Run
 
+`npm install`
+
 `npm run dev`
 
-#### Build and Export 
+Visit `localhost:3000`
+
+### Export
 
 `npm run build`
 
 `npm run export`
+
+#### Demo
+
+<a href="https://neoxus.ir/demo/iran-react">Demo</a>
+
+##### iran-react is a part of http://neoxus.ir project
+
+You are free to use as you like as long as you give the right credits to the project and to the designer
+
+
+### <div>Designed by <a href="https://nikandlv.ir">Nikan Dalvand</a></div>
