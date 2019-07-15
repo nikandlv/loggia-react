@@ -1,19 +1,24 @@
 .photo-indicator
     display flex
     align-items: center
-    color white
+    color black
     max-width 32px
     height 32px
     margin 0 10px
     overflow hidden
     white-space nowrap
     box-sizing border-box
-    border 2px solid white
+    border 2px solid black
     padding 0 10px
     border-radius 100px
     transition max-width 1s ease-in-out
     line-height 0.1rem
     cursor pointer
+    background rgba(255,255,255,0.2)
+    &.light
+        color white
+        border 2px solid white
+        background rgba(0,0,0,0.2)
     &.active
         max-width 30% 
     .title

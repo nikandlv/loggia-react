@@ -5,7 +5,7 @@ export default function PhotoIndicator(props) {
         props.setItem(props.number-1);
     }
     return (
-        <div className={`photo-indicator ${(props.active?"active":"")}`} onClick={switchTo}>
+        <div className={`photo-indicator ${(props.light?'light ':'')} ${(props.active?"active":"")}`} onClick={switchTo}>
             <span className="number">{toPersian(props.number)}</span>
             <span className="title">{props.title}</span>
         </div>
