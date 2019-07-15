@@ -9,11 +9,15 @@ export default class PhotoZone extends React.Component {
         loading:true,
     }
     updateItem = () => {
-        this.view.current.className = this.view.current.className.replace("loading","loaded")
+        window.setTimeout(()=> {
+            this.view.current.className = this.view.current.className.replace("loading","loaded")
+        },500)
     }
     componentDidUpdate(props,state) {
         if(this.props.active !== this.state.active) {
-            this.view.current.className = this.view.current.className.replace("loaded","loading")
+            window.setTimeout(()=> {
+                this.view.current.className = this.view.current.className.replace("loaded","loading")
+            },500)
         }
     }
     render() {
