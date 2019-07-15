@@ -2,6 +2,20 @@ import Wrapper from '../components/Wrapper'
 import { Gallery } from '../components/Gallery';
 import { BottomBar } from '../components/BottomBar';
 export default class index extends React.Component {
+	componentDidMount() {
+		this.mainLoop()
+	}
+	mainLoop = () => {
+		window.setTimeout(()=> {
+            let active = this.state.active
+            if(active === 9) {
+                active = 0
+            } else {
+                active += 1
+            }
+			this.setItem(active)
+        },3200)
+	}
 	state = {
 		active:0,
 	}
@@ -61,6 +75,7 @@ export default class index extends React.Component {
 		this.setState({
 			active
 		})
+		this.mainLoop()
     }
 	render() {
 		return (
