@@ -2,11 +2,9 @@ import Wrapper from '../components/Wrapper'
 import { Gallery } from '../components/Gallery';
 import { BottomBar } from '../components/BottomBar';
 export default class index extends React.Component {
-	componentDidMount() {
-		this.mainLoop()
-	}
-	mainLoop = () => {
-		window.setTimeout(()=> {
+	timeOut = []
+	continueLoop = () => {
+		this.timeOut = window.setTimeout(()=> {
             let active = this.state.active
             if(active === 9) {
                 active = 0
@@ -75,12 +73,12 @@ export default class index extends React.Component {
 		this.setState({
 			active
 		})
-		this.mainLoop()
+		clearTimeout(this.timeOut);
     }
 	render() {
 		return (
 			<Wrapper>
-				<Gallery items={this.items} active={this.state.active} setItem={this.setItem} />
+				<Gallery items={this.items} active={this.state.active} setItem={this.setItem} continueLoop={this.continueLoop} />
 				<BottomBar items={this.items} active={this.state.active} setItem={this.setItem} />
 			</Wrapper>
 		)

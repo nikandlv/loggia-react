@@ -17,16 +17,14 @@ export default class PhotoZone extends React.Component {
             this.view.current.className = this.view.current.className.replace("loading","loaded")
             this.transition = false
             this.forceUpdate()
-            
+            this.props.continueLoop()
         },370)
     }
     shouldComponentUpdate() {
-        console.log(this.transition)
         if(this.transition === true) {
             this.transition = false
             return true    
         }
-        console.log("loading")
         this.view.current.className = this.view.current.className.replace("loaded","loading")
         window.setTimeout(()=> {
             this.transition = true
