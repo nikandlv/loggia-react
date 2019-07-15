@@ -1,15 +1,28 @@
 import React from 'react'
 
 export default class PhotoZone extends React.Component {
+    state = {
+        loading:true,
+    }
+    updateItem = () => {
+        
+    
+    }
+    componentDidUpdate(props,state) {
+
+        if(this.props.active !== this.state.active) {
+            console.log("update")
+        }
+    }
     render() {
-        const {items,active} = this.props
+        const {items,active} = this.props;
+        const item = items[active];
+        const {loading} = this.state;
+        const status = loading? "loading":"loaded";
         return (
             <div className="zone">
-                <div className="view-1 active" ref={this.view1} style={{backgroundImage:`url(${items[active].photo})`}}>
-                    a
-                </div>
-                <div className="view-2" ref={this.view2}>
-b
+                <img alt="image" src={item.photo} onLoad={this.updateItem} style={{display:'none'}} />
+                <div className={`view-1 active ${status}`} ref={this.view1} style={{backgroundImage:`url(${item.photo})`}}>
                 </div>
                 <div className="overlay" ref={this.overlay} />
             </div>

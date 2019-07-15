@@ -47,28 +47,16 @@ export default class index extends React.Component {
 			photo:"/static/img/shot-10.jpg"
 		}
 	]
-	componentDidMount() {
-        this.itemLoop()
-    }
-    itemLoop = () => {
-        window.setTimeout(()=> {
-            let active = this.state.active
-            if(active === 9) {
-                active = 0
-            } else {
-                active += 1
-            }
-            this.setState({
-                active:active
-            })
-            this.itemLoop()
-        },5000)
+    setItem = (active) => {
+		this.setState({
+			active
+		})
     }
 	render() {
 		return (
 			<Wrapper>
-				<Gallery items={this.items} active={this.state.active} />
-				<BottomBar items={this.items} active={this.state.active} />
+				<Gallery items={this.items} active={this.state.active} setItem={this.setItem} />
+				<BottomBar items={this.items} active={this.state.active} setItem={this.setItem} />
 			</Wrapper>
 		)
 	}
