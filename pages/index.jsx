@@ -73,7 +73,7 @@ export default class index extends React.Component {
 		this.setState({
 			active
 		})
-		clearTimeout(this.timeOut);
+		clearTimeout(this.timeOut );
     }
 	render() {
 		return (
