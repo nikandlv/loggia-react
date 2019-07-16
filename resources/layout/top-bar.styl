@@ -5,12 +5,23 @@
     height 72px
     width 100%
     display flex
-    padding 2rem
+    padding 1.3rem
     box-sizing border-box
-    svg
-        width 24px
-        height auto
-        .icon
-            fill white
+    div
+        div
+            cursor pointer
+            display inline-block
+            padding: 1rem
+            border-radius: 100%
+            width 24px
+            height 24px
+            transition background-color 200ms
+            &:hover
+                background-color: rgba(0,0,0,0.3)
+            svg
+                width 24px
+                height 24px
+                .icon
+                    fill white
     .push
         flex-grow 1
