@@ -31,7 +31,12 @@ div.zone
     width: 0%
     height 2px
     background white
-    transition width 1ms ease
+    &.loading
+        transition width 270ms ease
+        width 0%
+    &.loaded
+        transition width 3200ms ease
+        width 100% 
 @keyframes loaded
     0%
         opacity 0
