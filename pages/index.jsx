@@ -2,6 +2,8 @@ import Wrapper from '../components/Wrapper'
 import { Gallery } from '../components/Gallery';
 import { BottomBar } from '../components/BottomBar';
 import TopBar from '../components/TopBar';
+import Fullscreen from "react-full-screen";
+
 export default class index extends React.Component {
 	timeOut = []
 	continueLoop = () => {
@@ -17,6 +19,14 @@ export default class index extends React.Component {
 	}
 	state = {
 		active:0,
+		fullscreen:false,
+	}
+	setFullscreen = (fullscreen) => {
+		if(fullscreen && this.state.fullscreen) {
+			return
+		}
+		this.setState({fullscreen})
+		this.setItem(this.state.active+1)
 	}
 	items = [
 		{
@@ -78,11 +88,17 @@ export default class index extends React.Component {
     }
 	render() {
 		return (
+			<Fullscreen
+			enabled={this.state.fullscreen}
+			onChange={isFull => this.setFullscreen(isFull)}
+		  >
 			<Wrapper>
-				<TopBar items={this.items} active={this.state.active} setItem={this.setItem} continueLoop={this.continueLoop}/>
+				
+				<TopBar fullscreen={this.state.fullscreen} setFullscreen={this.setFullscreen} items={this.items} active={this.state.active} setItem={this.setItem} continueLoop={this.continueLoop}/>
 				<Gallery items={this.items} active={this.state.active} setItem={this.setItem} continueLoop={this.continueLoop} />
 				<BottomBar items={this.items} active={this.state.active} setItem={this.setItem} />
 			</Wrapper>
+			</Fullscreen>
 		)
 	}
 }
