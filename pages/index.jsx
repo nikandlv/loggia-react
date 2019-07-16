@@ -13,7 +13,7 @@ export default class index extends React.Component {
                 active += 1
             }
 			this.setItem(active)
-        },3200)
+        },6000)
 	}
 	state = {
 		active:0,
