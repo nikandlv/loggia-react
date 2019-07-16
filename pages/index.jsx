@@ -1,6 +1,7 @@
 import Wrapper from '../components/Wrapper'
 import { Gallery } from '../components/Gallery';
 import { BottomBar } from '../components/BottomBar';
+import TopBar from '../components/TopBar';
 export default class index extends React.Component {
 	timeOut = []
 	continueLoop = () => {
@@ -78,6 +79,7 @@ export default class index extends React.Component {
 	render() {
 		return (
 			<Wrapper>
+				<TopBar items={this.items} active={this.state.active} setItem={this.setItem} continueLoop={this.continueLoop}/>
 				<Gallery items={this.items} active={this.state.active} setItem={this.setItem} continueLoop={this.continueLoop} />
 				<BottomBar items={this.items} active={this.state.active} setItem={this.setItem} />
 			</Wrapper>
