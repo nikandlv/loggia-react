@@ -1,6 +1,6 @@
-export default function BottomSheet() {
+export default function BottomSheet(props) {
     return (
-        <div>
+        <div className={`bottom-sheet ${props.open?" open":""}`}>
             sheet
         </div>
     )
