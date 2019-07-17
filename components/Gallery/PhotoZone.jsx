@@ -5,6 +5,7 @@ export default class PhotoZone extends React.Component {
         this.view = React.createRef();
         this.progress = React.createRef();
         this.transition = false
+        this.fullscreen = false
     }
     state = {
         current:{title:"",photo:""},
@@ -21,7 +22,10 @@ export default class PhotoZone extends React.Component {
             this.props.continueLoop()
         },370)
     }
-    shouldComponentUpdate() {
+    shouldComponentUpdate(props) {
+        if(props.fullscreen !== this.props.fullscreen) {
+            return false
+        }
         if(this.transition === true) {
             this.transition = false
             return true    
@@ -37,6 +41,7 @@ export default class PhotoZone extends React.Component {
     render() {
         const {items,active} = this.props;
         const item = items[active];
+        this.fullscreen = this.props.fullscreen
         return (
             <div>
                 <div className="zone">

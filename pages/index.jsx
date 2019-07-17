@@ -26,7 +26,7 @@ export default class index extends React.Component {
 			return
 		}
 		this.setState({fullscreen})
-		this.setItem(this.state.active+1)
+		
 	}
 	items = [
 		{
@@ -95,7 +95,7 @@ export default class index extends React.Component {
 			<Wrapper>
 				
 				<TopBar fullscreen={this.state.fullscreen} setFullscreen={this.setFullscreen} items={this.items} active={this.state.active} setItem={this.setItem} continueLoop={this.continueLoop}/>
-				<Gallery items={this.items} active={this.state.active} setItem={this.setItem} continueLoop={this.continueLoop} />
+				<Gallery fullscreen={this.state.fullscreen} items={this.items} active={this.state.active} setItem={this.setItem} continueLoop={this.continueLoop} />
 				<BottomBar items={this.items} active={this.state.active} setItem={this.setItem} />
 			</Wrapper>
 			</Fullscreen>
