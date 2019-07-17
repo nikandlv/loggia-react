@@ -24,6 +24,11 @@ export default class PhotoZone extends React.Component {
     }
     shouldComponentUpdate(props) {
         if(props.fullscreen !== this.props.fullscreen) {
+            this.fullscreen = this.props.fullscreen
+            return false
+        }
+        if(this.fullscreen !== props.fullscreen) {
+            this.fullscreen = props.fullscreen
             return false
         }
         if(this.transition === true) {
