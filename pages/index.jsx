@@ -21,6 +21,7 @@ export default class index extends React.Component {
 	state = {
 		active:0,
 		fullscreen:false,
+		overview:false
 	}
 	setFullscreen = (fullscreen) => {
 		if(fullscreen && this.state.fullscreen) {
@@ -86,7 +87,10 @@ export default class index extends React.Component {
 			active
 		})
 		clearTimeout(this.timeOut );
-    }
+	}
+	setOverview = (overview) => {
+		this.setState({overview})
+	}
 	render() {
 		return (
 			<Fullscreen
@@ -96,8 +100,8 @@ export default class index extends React.Component {
 			<Wrapper>
 				<TopBar fullscreen={this.state.fullscreen} setFullscreen={this.setFullscreen} items={this.items} active={this.state.active} setItem={this.setItem} continueLoop={this.continueLoop}/>
 				<Gallery fullscreen={this.state.fullscreen} items={this.items} active={this.state.active} setItem={this.setItem} continueLoop={this.continueLoop} />
-				<BottomBar items={this.items} active={this.state.active} setItem={this.setItem} />
-				<BottomSheet />
+				<BottomBar setOverview={this.setOverview} items={this.items} active={this.state.active} setItem={this.setItem} />
+				<BottomSheet open={this.state.overview}/>
 			</Wrapper>
 			</Fullscreen>
 		)

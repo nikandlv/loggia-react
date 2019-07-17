@@ -4,18 +4,28 @@
     width 100%
     display flex
     overflow auto
+    align-items: center
     max-width: 100vw
     box-sizing border-box
-    padding 1.3rem
+    padding 0.7rem 
     border-top 0.5px solid rgba(255,255,255,0.2)
     z-index 12
     & .expand-icon-wrapper
         flex-grow 1
         justify-content: flex-end
         display flex
-        svg 
-            width 48px
-            height auto
+        div
             cursor pointer
-        svg .icon
-            fill white
+            display inline-block
+            padding: 1rem
+            border-radius: 100%
+            width 24px
+            height 24px
+            transition background-color 200ms
+            &:hover
+                background-color: rgba(0,0,0,0.3)
+            svg
+                width 24px
+                height 24px
+                .icon
+                    fill white
