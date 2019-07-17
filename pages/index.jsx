@@ -3,6 +3,7 @@ import { Gallery } from '../components/Gallery';
 import { BottomBar } from '../components/BottomBar';
 import TopBar from '../components/TopBar';
 import Fullscreen from "react-full-screen";
+import BottomSheet from '../components/BottomSheet';
 
 export default class index extends React.Component {
 	timeOut = []
@@ -93,10 +94,10 @@ export default class index extends React.Component {
 			onChange={isFull => this.setFullscreen(isFull)}
 		  >
 			<Wrapper>
-				
 				<TopBar fullscreen={this.state.fullscreen} setFullscreen={this.setFullscreen} items={this.items} active={this.state.active} setItem={this.setItem} continueLoop={this.continueLoop}/>
 				<Gallery fullscreen={this.state.fullscreen} items={this.items} active={this.state.active} setItem={this.setItem} continueLoop={this.continueLoop} />
 				<BottomBar items={this.items} active={this.state.active} setItem={this.setItem} />
+				<BottomSheet />
 			</Wrapper>
 			</Fullscreen>
 		)
