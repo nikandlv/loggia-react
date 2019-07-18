@@ -40,16 +40,16 @@ export default class index extends React.Component {
 		this.setState({overview})
 	}
 	items = [
-		{ title:"عکس شماره ۱", photo:"/static/img/shot-1.jpg", light:true },
-		{ title:"عکس شماره ۲", photo:"/static/img/shot-2.jpg", light:false },
-		{ title:"عکس شماره ۳", photo:"/static/img/shot-3.jpg", light:true },
-		{ title:"عکس شماره ۴", photo:"/static/img/shot-4.jpg", light:true },
-		{ title:"عکس شماره ۵", photo:"/static/img/shot-5.jpg", light:false },
-		{ title:"عکس شماره ۶", photo:"/static/img/shot-6.jpg", light:false },
-		{ title:"عکس شماره ۷", photo:"/static/img/shot-7.jpg", light:false },
-		{ title:"عکس شماره ۸", photo:"/static/img/shot-8.jpg", light:false },
-		{ title:"عکس شماره ۹", photo:"/static/img/shot-9.jpg", light:false },
-		{ title:"عکس شماره ۱۰", photo:"/static/img/shot-10.jpg", light:false }
+		{ title:"عکس شماره ۱", photo:"/static/img/shot-1.jpg", thumbnail:"/static/img/thumbnail-shot-1.jpg", light:true },
+		{ title:"عکس شماره ۲", photo:"/static/img/shot-2.jpg", thumbnail:"/static/img/thumbnail-shot-2.jpg", light:false },
+		{ title:"عکس شماره ۳", photo:"/static/img/shot-3.jpg", thumbnail:"/static/img/thumbnail-shot-3.jpg", light:true },
+		{ title:"عکس شماره ۴", photo:"/static/img/shot-4.jpg", thumbnail:"/static/img/thumbnail-shot-4.jpg", light:true },
+		{ title:"عکس شماره ۵", photo:"/static/img/shot-5.jpg", thumbnail:"/static/img/thumbnail-shot-5.jpg", light:false },
+		{ title:"عکس شماره ۶", photo:"/static/img/shot-6.jpg", thumbnail:"/static/img/thumbnail-shot-6.jpg", light:false },
+		{ title:"عکس شماره ۷", photo:"/static/img/shot-7.jpg", thumbnail:"/static/img/thumbnail-shot-7.jpg", light:false },
+		{ title:"عکس شماره ۸", photo:"/static/img/shot-8.jpg", thumbnail:"/static/img/thumbnail-shot-8.jpg", light:false },
+		{ title:"عکس شماره ۹", photo:"/static/img/shot-9.jpg", thumbnail:"/static/img/thumbnail-shot-9.jpg", light:false },
+		{ title:"عکس شماره ۱۰", photo:"/static/img/shot-10.jpg", thumbnail:"/static/img/thumbnail-shot-10.jpg",  light:false }
 	]
 	render() {
 		return (
@@ -61,7 +61,7 @@ export default class index extends React.Component {
 				<TopBar fullscreen={this.state.fullscreen} setFullscreen={this.setFullscreen} items={this.items} active={this.state.active} setItem={this.setItem} continueLoop={this.continueLoop}/>
 				<Gallery fullscreen={this.state.fullscreen} items={this.items} active={this.state.active} setItem={this.setItem} continueLoop={this.continueLoop} />
 				<BottomBar setOverview={this.setOverview} items={this.items} active={this.state.active} setItem={this.setItem} />
-				<BottomSheet setOverview={this.setOverview} open={this.state.overview}/>
+				<BottomSheet setOverview={this.setOverview} items={this.items} active={this.state.active} setItem={this.setItem} open={this.state.overview}/>
 			</Wrapper>
 			</Fullscreen>
 		)
