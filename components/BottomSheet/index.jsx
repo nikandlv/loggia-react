@@ -2,9 +2,11 @@ import Thumbnail from "../Gallery/Thumbnail";
 
 export default function BottomSheet(props) {
     const {items,active,setOverview} = props
+    const activeItem = items[active]
     return (
         <div className={`bottom-sheet ${props.open?" open":""}`}>
             <div className="sheet-wrapper">
+                <h1>گالری ایران زیبا</h1>
                 <div className="thumbnail-wrapper">
                     <div className="row">
                         {items.map((item,key)=> {
@@ -27,6 +29,9 @@ export default function BottomSheet(props) {
                         })}
                     </div>
                 </div>
+            <div>
+            <h1>{activeItem.title}</h1>
+            </div>
             </div>
             <div className="expand-icon-wrapper">
                 <div>
