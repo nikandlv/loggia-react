@@ -6,6 +6,11 @@ import Fullscreen from "react-full-screen";
 import BottomSheet from '../components/BottomSheet';
 
 export default class index extends React.Component {
+	state = {
+		active:0,
+		fullscreen:false,
+		overview:false
+	}
 	timeOut = []
 	continueLoop = () => {
 		this.timeOut = window.setTimeout(()=> {
@@ -18,11 +23,6 @@ export default class index extends React.Component {
 			this.setItem(active)
         },6000)
 	}
-	state = {
-		active:0,
-		fullscreen:false,
-		overview:false
-	}
 	setFullscreen = (fullscreen) => {
 		if(fullscreen && this.state.fullscreen) {
 			return
@@ -30,59 +30,7 @@ export default class index extends React.Component {
 		this.setState({fullscreen})
 		
 	}
-	items = [
-		{
-			title:"عکس شماره ۱",
-			photo:"/static/img/shot-1.jpg",
-			light:true
-		},
-		{
-			title:"عکس شماره ۲",
-			photo:"/static/img/shot-2.jpg",
-			light:false
-		},
-		{
-			title:"عکس شماره ۳",
-			photo:"/static/img/shot-3.jpg",
-			light:true
-		},
-		{
-			title:"عکس شماره ۴",
-			photo:"/static/img/shot-4.jpg",
-			light:true
-		},
-		{
-			title:"عکس شماره ۵",
-			photo:"/static/img/shot-5.jpg",
-			light:false
-		},
-		{
-			title:"عکس شماره ۶",
-			photo:"/static/img/shot-6.jpg",
-			light:false
-		},
-		{
-			title:"عکس شماره ۷",
-			photo:"/static/img/shot-7.jpg",
-			light:false
-		},
-		{
-			title:"عکس شماره ۸",
-			photo:"/static/img/shot-8.jpg",
-			light:false
-		},
-		{
-			title:"عکس شماره ۹",
-			photo:"/static/img/shot-9.jpg",
-			light:false
-		},
-		{
-			title:"عکس شماره ۱۰",
-			photo:"/static/img/shot-10.jpg",
-			light:false
-		}
-	]
-    setItem = (active) => {
+	setItem = (active) => {
 		this.setState({
 			active
 		})
@@ -91,6 +39,18 @@ export default class index extends React.Component {
 	setOverview = (overview) => {
 		this.setState({overview})
 	}
+	items = [
+		{ title:"عکس شماره ۱", photo:"/static/img/shot-1.jpg", light:true },
+		{ title:"عکس شماره ۲", photo:"/static/img/shot-2.jpg", light:false },
+		{ title:"عکس شماره ۳", photo:"/static/img/shot-3.jpg", light:true },
+		{ title:"عکس شماره ۴", photo:"/static/img/shot-4.jpg", light:true },
+		{ title:"عکس شماره ۵", photo:"/static/img/shot-5.jpg", light:false },
+		{ title:"عکس شماره ۶", photo:"/static/img/shot-6.jpg", light:false },
+		{ title:"عکس شماره ۷", photo:"/static/img/shot-7.jpg", light:false },
+		{ title:"عکس شماره ۸", photo:"/static/img/shot-8.jpg", light:false },
+		{ title:"عکس شماره ۹", photo:"/static/img/shot-9.jpg", light:false },
+		{ title:"عکس شماره ۱۰", photo:"/static/img/shot-10.jpg", light:false }
+	]
 	render() {
 		return (
 			<Fullscreen
