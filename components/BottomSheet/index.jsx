@@ -8,7 +8,7 @@ export default function BottomSheet(props) {
                 <div className="thumbnail-wrapper">
                     <div className="row">
                         {items.map((item,key)=> {
-                            if(key % 2 === 0) {
+                            if(key % 2 === 1) {
                                 return
                             }
                             return (
@@ -18,7 +18,7 @@ export default function BottomSheet(props) {
                     </div>
                     <div className="row">
                         {items.map((item,key)=> {
-                            if(key % 2 === 1) {
+                            if(key % 2 === 0) {
                                 return
                             }
                             return (

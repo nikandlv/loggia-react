@@ -8,11 +8,16 @@
     margin 10px
     border-radius: 8px
     position relative
+    transition 200ms border-width,transform 200ms
+    &.active
+        border 2px solid #78c5ef
+        transform scale(1.1)
     &:before
         content ''
         width 100%
         height 100%
-        background rgba(0,0,0,0.5)
+        background rgba(0,0,0,0.3)
+        cursor pointer
         position absolute
         left 0
         top 0
