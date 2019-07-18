@@ -8,4 +8,12 @@ export class Gallery extends React.Component {
             </section>
         )
     }
+    shouldComponentUpdate(props) {
+        let newProps = [props.active,props.fullscreen]
+        let oldProps = [this.props.active,this.props.fullscreen]
+        if(newProps.active === oldProps.active && newProps.fullscreen === oldProps.fullscreen) {
+            return false
+        }
+        return true;
+    }
 }
