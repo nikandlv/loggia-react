@@ -61,7 +61,7 @@ export default class index extends React.Component {
 				<TopBar fullscreen={this.state.fullscreen} setFullscreen={this.setFullscreen} items={this.items} active={this.state.active} setItem={this.setItem} continueLoop={this.continueLoop}/>
 				<Gallery fullscreen={this.state.fullscreen} items={this.items} active={this.state.active} setItem={this.setItem} continueLoop={this.continueLoop} />
 				<BottomBar setOverview={this.setOverview} items={this.items} active={this.state.active} setItem={this.setItem} />
-				<BottomSheet open={this.state.overview}/>
+				<BottomSheet setOverview={this.setOverview} open={this.state.overview}/>
 			</Wrapper>
 			</Fullscreen>
 		)

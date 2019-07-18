@@ -28,7 +28,6 @@ export default class PhotoZone extends React.Component {
             this.fullscreen = this.props.fullscreen
             return false
         }
-        console.log('check2')
         if(this.fullscreen !== props.fullscreen && this.transition === false 
             && !(props.fullscreen === true && this.props.fullscreen === true && this.fullscreen === false)) {
             this.fullscreen = props.fullscreen
@@ -38,7 +37,6 @@ export default class PhotoZone extends React.Component {
             this.transition = false
             return true    
         }
-        console.log('check3')
         this.view.current.className = this.view.current.className.replace("loaded","loading")
         this.progress.current.className = this.progress.current.className.replace("loaded","loading")
         window.setTimeout(()=> {
