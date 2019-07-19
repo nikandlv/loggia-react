@@ -54,7 +54,7 @@ export default class PhotoZone extends React.Component {
                         </Typist>
                     </div>
                 </div>
-                <div className="progress loading" ref={this.progress} />
+                <div className={`progress loading ${item.light?"light":""}`} ref={this.progress} />
             </div>
         )
     }
