@@ -1,4 +1,5 @@
 import React from 'react'
+import Typist from 'react-typist';
 export default class PhotoZone extends React.Component {
     constructor(props) {
         super(props)
@@ -44,6 +45,14 @@ export default class PhotoZone extends React.Component {
                     <div className={`view active loaded`} ref={this.view} style={{backgroundImage:`url(${item.photo})`}}>
                     </div>
                     <div className="overlay" ref={this.overlay} />
+                    <div className="text">
+                        <Typist key={active} avgTypingDelay={50} startDelay={20}>
+                            <h1>{item.title}</h1>
+                            <span>{item.description_1}</span>
+                            <Typist.Backspace count={item.backspace} />
+                            <span>{item.description_2}</span>
+                        </Typist>
+                    </div>
                 </div>
                 <div className="progress loading" ref={this.progress} />
             </div>
