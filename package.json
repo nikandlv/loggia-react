@@ -21,6 +21,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-full-screen": "^0.2.4",
+    "react-typist": "^2.0.5",
     "stylus": "^0.54.5",
     "url-loader": "^2.0.1"
   },
