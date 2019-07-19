@@ -31,6 +31,7 @@ export default function BottomSheet(props) {
                 </div>
             <div>
             <h1>{activeItem.title}</h1>
+            <p>{activeItem.description}</p>
             </div>
             </div>
             <div className="expand-icon-wrapper">
