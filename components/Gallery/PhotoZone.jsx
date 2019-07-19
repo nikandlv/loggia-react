@@ -45,7 +45,7 @@ export default class PhotoZone extends React.Component {
                     <div className={`view active loaded`} ref={this.view} style={{backgroundImage:`url(${item.photo})`}}>
                     </div>
                     <div className="overlay" ref={this.overlay} />
-                    <div className="text">
+                    <div className={`text ${item.main_light?"light":""}`}>
                         <Typist key={active} avgTypingDelay={50} startDelay={20}>
                             <h1>{item.title}</h1>
                             <span>{item.description_1}</span>
