@@ -1,4 +1,5 @@
 import Thumbnail from "../Gallery/Thumbnail";
+import Typist from 'react-typist';
 
 export default function BottomSheet(props) {
     const {items,active,setOverview,setItem} = props
@@ -30,8 +31,13 @@ export default function BottomSheet(props) {
                     </div>
                 </div>
             <div>
-            <h1>{activeItem.title}</h1>
-            <p>{activeItem.description}</p>
+            <Typist key={active} avgTypingDelay={50} startDelay={20}>
+                <h1>{activeItem.title}</h1>
+                
+            <span>{activeItem.description_1}</span>
+                <Typist.Backspace count={activeItem.backspace} />
+                <span>{activeItem.description_2}</span>
+            </Typist>
             </div>
             </div>
             <div className="expand-icon-wrapper">
