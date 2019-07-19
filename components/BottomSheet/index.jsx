@@ -1,7 +1,7 @@
 import Thumbnail from "../Gallery/Thumbnail";
 
 export default function BottomSheet(props) {
-    const {items,active,setOverview} = props
+    const {items,active,setOverview,setItem} = props
     const activeItem = items[active]
     return (
         <div className={`bottom-sheet ${props.open?" open":""}`}>
@@ -14,7 +14,7 @@ export default function BottomSheet(props) {
                                 return
                             }
                             return (
-                                <Thumbnail photo={item.thumbnail} active={key === active} key={key}/>
+                                <Thumbnail onClick={()=> setItem(key)} photo={item.thumbnail} active={key === active} key={key}/>
                             )
                         })}
                     </div>
@@ -24,7 +24,7 @@ export default function BottomSheet(props) {
                                 return
                             }
                             return (
-                                <Thumbnail photo={item.thumbnail} active={key === active} key={key}/>
+                                <Thumbnail onClick={()=> setItem(key)} photo={item.thumbnail} active={key === active} key={key}/>
                             )
                         })}
                     </div>

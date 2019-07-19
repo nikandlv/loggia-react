@@ -1,6 +1,6 @@
 export default function Thumbnail(props) {
-    const {photo,active} = props
+    const {photo,active,onClick} = props
     return (
-        <div className={`thumbnail ${active?"active":""}`} style={{backgroundImage:`url(${photo})`}} />
+        <div onClick={onClick} className={`thumbnail ${active?"active":""}`} style={{backgroundImage:`url(${photo})`}} />
     )
 }
