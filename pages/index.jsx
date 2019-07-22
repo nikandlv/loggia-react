@@ -41,15 +41,15 @@ export default class index extends React.Component {
 	}
 	items = [
 		{ title:"عکس شماره ۱",description_1:"این متن درباره عکسی که در صفحه می بینید میباسد! ", description_2:"می باشد!", backspace:8, photo:"/static/img/shot-1.jpg", thumbnail:"/static/img/thumbnail-shot-1.jpg", bottom_light:true, main_light:true, top_light:true },
-		{ title:"عکس شماره ۲",description_1:"این متن درباره عکسی که در صفحه می بینید میباسد! ", description_2:"می باشد!", backspace:8, photo:"/static/img/shot-2.jpg", thumbnail:"/static/img/thumbnail-shot-2.jpg", bottom_light:false, main_light:true, top_light:true },
+		{ title:"عکس شماره ۲",description_1:"این متن درباره عکسی که در صفحه می بینید میباسد! ", description_2:"می باشد!", backspace:8, photo:"/static/img/shot-2.jpg", thumbnail:"/static/img/thumbnail-shot-2.jpg", bottom_light:false, main_light:true, top_light:false },
 		{ title:"عکس شماره ۳",description_1:"این متن درباره عکسی که در صفحه می بینید میباسد! ", description_2:"می باشد!", backspace:8, photo:"/static/img/shot-3.jpg", thumbnail:"/static/img/thumbnail-shot-3.jpg", bottom_light:true, main_light:true, top_light:true },
 		{ title:"عکس شماره ۴",description_1:"این متن درباره عکسی که در صفحه می بینید میباسد! ", description_2:"می باشد!", backspace:8, photo:"/static/img/shot-4.jpg", thumbnail:"/static/img/thumbnail-shot-4.jpg", bottom_light:true, main_light:true, top_light:true },
-		{ title:"عکس شماره ۵",description_1:"این متن درباره عکسی که در صفحه می بینید میباسد! ", description_2:"می باشد!", backspace:8, photo:"/static/img/shot-5.jpg", thumbnail:"/static/img/thumbnail-shot-5.jpg", bottom_light:false, main_light:false, top_light:false },
-		{ title:"عکس شماره ۶",description_1:"این متن درباره عکسی که در صفحه می بینید میباسد! ", description_2:"می باشد!", backspace:8, photo:"/static/img/shot-6.jpg", thumbnail:"/static/img/thumbnail-shot-6.jpg", bottom_light:false, main_light:false, top_light:true },
-		{ title:"عکس شماره ۷",description_1:"این متن درباره عکسی که در صفحه می بینید میباسد! ", description_2:"می باشد!", backspace:8, photo:"/static/img/shot-7.jpg", thumbnail:"/static/img/thumbnail-shot-7.jpg", bottom_light:false, main_light:false, top_light:true },
-		{ title:"عکس شماره ۸",description_1:"این متن درباره عکسی که در صفحه می بینید میباسد! ", description_2:"می باشد!", backspace:8, photo:"/static/img/shot-8.jpg", thumbnail:"/static/img/thumbnail-shot-8.jpg", bottom_light:false, main_light:false, top_light:false },
-		{ title:"عکس شماره ۹",description_1:"این متن درباره عکسی که در صفحه می بینید میباسد! ", description_2:"می باشد!", backspace:8, photo:"/static/img/shot-9.jpg", thumbnail:"/static/img/thumbnail-shot-9.jpg", bottom_light:false, main_light:false, top_light:true },
-		{ title:"عکس شماره ۱۰",description_1:"این متن درباره عکسی که در صفحه می بینید میباسد! ", description_2:"می باشد!", backspace:8, photo:"/static/img/shot-10.jpg", thumbnail:"/static/img/thumbnail-shot-10.jpg",  bottom_light:false, main_light:false, top_light:true }
+		{ title:"عکس شماره ۵",description_1:"این متن درباره عکسی که در صفحه می بینید میباسد! ", description_2:"می باشد!", backspace:8, photo:"/static/img/shot-5.jpg", thumbnail:"/static/img/thumbnail-shot-5.jpg", bottom_light:true, main_light:false, top_light:false },
+		{ title:"عکس شماره ۶",description_1:"این متن درباره عکسی که در صفحه می بینید میباسد! ", description_2:"می باشد!", backspace:8, photo:"/static/img/shot-6.jpg", thumbnail:"/static/img/thumbnail-shot-6.jpg", bottom_light:true, main_light:true, top_light:true },
+		{ title:"عکس شماره ۷",description_1:"این متن درباره عکسی که در صفحه می بینید میباسد! ", description_2:"می باشد!", backspace:8, photo:"/static/img/shot-7.jpg", thumbnail:"/static/img/thumbnail-shot-7.jpg", bottom_light:true, main_light:true, top_light:true },
+		{ title:"عکس شماره ۸",description_1:"این متن درباره عکسی که در صفحه می بینید میباسد! ", description_2:"می باشد!", backspace:8, photo:"/static/img/shot-8.jpg", thumbnail:"/static/img/thumbnail-shot-8.jpg", bottom_light:true, main_light:true, top_light:false },
+		{ title:"عکس شماره ۹",description_1:"این متن درباره عکسی که در صفحه می بینید میباسد! ", description_2:"می باشد!", backspace:8, photo:"/static/img/shot-9.jpg", thumbnail:"/static/img/thumbnail-shot-9.jpg", bottom_light:true, main_light:true, top_light:true },
+		{ title:"عکس شماره ۱۰",description_1:"این متن درباره عکسی که در صفحه می بینید میباسد! ", description_2:"می باشد!", backspace:8, photo:"/static/img/shot-10.jpg", thumbnail:"/static/img/thumbnail-shot-10.jpg",  bottom_light:true , main_light:true, top_light:true }
 	]
 	render() {
 		return (
