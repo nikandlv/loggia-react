@@ -39,7 +39,7 @@
         "thumbnail":"/static/img/shot-2.jpg",
         "bottombar_light":true,
         "zone_light":true,
-        "topbar_light":true 
+        "topbar_light":false 
     },
     {
         "about": {
@@ -102,7 +102,7 @@
         "thumbnail":"/static/img/shot-5.jpg",
         "bottombar_light":true,
         "zone_light":true,
-        "topbar_light":true 
+        "topbar_light":false 
     },
     {
         "about": {
@@ -121,9 +121,9 @@
         },
         "photo":"/static/img/shot-6.jpg",
         "thumbnail":"/static/img/shot-6.jpg",
-        "bottombar_light":true,
-        "zone_light":true,
-        "topbar_light":true 
+        "bottombar_light":false,
+        "zone_light":false,
+        "topbar_light":false 
     },
     {
         "about": {
@@ -144,7 +144,7 @@
         "thumbnail":"/static/img/shot-7.jpg",
         "bottombar_light":true,
         "zone_light":true,
-        "topbar_light":true 
+        "topbar_light":false 
     },
     {
         "about": {
@@ -163,8 +163,50 @@
         },
         "photo":"/static/img/shot-8.jpg",
         "thumbnail":"/static/img/shot-8.jpg",
-        "bottombar_light":true,
+        "bottombar_light":false,
         "zone_light":true,
         "topbar_light":true 
+    },
+    {
+        "about": {
+            "en": {
+                "title":"Photo #1",
+                "description":"This description is about the phooto",
+                "description_trail":"photo!",
+                "trail":6
+            },
+            "fa": {
+                "title":"عکس شماره ۱",
+                "description":"این متن درباره عکسی که در صفحه می بینید میباسد!",
+                "description_trail":"می باشد!",
+                "trail":7
+            }
+        },
+        "photo":"/static/img/shot-9.jpg",
+        "thumbnail":"/static/img/shot-9.jpg",
+        "bottombar_light":true,
+        "zone_light":true,
+        "topbar_light":false 
+    },
+    {
+        "about": {
+            "en": {
+                "title":"Photo #1",
+                "description":"This description is about the phooto",
+                "description_trail":"photo!",
+                "trail":6
+            },
+            "fa": {
+                "title":"عکس شماره ۱",
+                "description":"این متن درباره عکسی که در صفحه می بینید میباسد!",
+                "description_trail":"می باشد!",
+                "trail":7
+            }
+        },
+        "photo":"/static/img/shot-10.jpg",
+        "thumbnail":"/static/img/shot-10.jpg",
+        "bottombar_light":false,
+        "zone_light":true,
+        "topbar_light":false 
     }
 ]
