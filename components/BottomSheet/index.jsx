@@ -34,9 +34,9 @@ export default function BottomSheet(props) {
             <Typist key={active} avgTypingDelay={50} startDelay={20}>
                 <h1>{activeItem.title}</h1>
                 
-            <span>{activeItem.description_1}</span>
-                <Typist.Backspace count={activeItem.backspace} />
-                <span>{activeItem.description_2}</span>
+            <span>{activeItem.description}</span>
+                <Typist.Backspace count={activeItem.trail} />
+                <span>{activeItem.description_trail}</span>
             </Typist>
             </div>
             </div>

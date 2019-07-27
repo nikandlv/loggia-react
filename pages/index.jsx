@@ -9,19 +9,21 @@ export default class index extends React.Component {
 	state = {
 		active:0,
 		fullscreen:false,
-		overview:false
+		overview:false,
+		language:'fa'
 	}
 	timeOut = []
 	continueLoop = () => {
 		this.timeOut = window.setTimeout(()=> {
             let active = this.state.active
-            if(active === 9) {
+            if(active === (this.items.length - 1)) {
                 active = 0
             } else {
                 active += 1
             }
 			this.setItem(active)
-        },6000)
+		
+		},6000)
 	}
 	setFullscreen = (fullscreen) => {
 		if(fullscreen && this.state.fullscreen) {
@@ -40,16 +42,17 @@ export default class index extends React.Component {
 		this.setState({overview})
 	}
 	items = [
-		{ title:"عکس شماره ۱",description_1:"این متن درباره عکسی که در صفحه می بینید میباسد! ", description_2:"می باشد!", backspace:8, photo:"/static/img/shot-1.jpg", thumbnail:"/static/img/thumbnail-shot-1.jpg", bottom_light:true, main_light:true, top_light:true },
-		{ title:"عکس شماره ۲",description_1:"این متن درباره عکسی که در صفحه می بینید میباسد! ", description_2:"می باشد!", backspace:8, photo:"/static/img/shot-2.jpg", thumbnail:"/static/img/thumbnail-shot-2.jpg", bottom_light:false, main_light:true, top_light:false },
-		{ title:"عکس شماره ۳",description_1:"این متن درباره عکسی که در صفحه می بینید میباسد! ", description_2:"می باشد!", backspace:8, photo:"/static/img/shot-3.jpg", thumbnail:"/static/img/thumbnail-shot-3.jpg", bottom_light:true, main_light:true, top_light:true },
-		{ title:"عکس شماره ۴",description_1:"این متن درباره عکسی که در صفحه می بینید میباسد! ", description_2:"می باشد!", backspace:8, photo:"/static/img/shot-4.jpg", thumbnail:"/static/img/thumbnail-shot-4.jpg", bottom_light:true, main_light:true, top_light:true },
-		{ title:"مساجد زیبا",description_1:"این متن درباره عکسی که در صفحه می بینید میباسد! ", description_2:"می باشد!", backspace:8, photo:"/static/img/shot-5.jpg", thumbnail:"/static/img/thumbnail-shot-5.jpg", bottom_light:true, main_light:false, top_light:false },
-		{ title:"عکس شماره ۶",description_1:"این متن درباره عکسی که در صفحه می بینید میباسد! ", description_2:"می باشد!", backspace:8, photo:"/static/img/shot-6.jpg", thumbnail:"/static/img/thumbnail-shot-6.jpg", bottom_light:true, main_light:true, top_light:true },
-		{ title:"عکس شماره ۷",description_1:"این متن درباره عکسی که در صفحه می بینید میباسد! ", description_2:"می باشد!", backspace:8, photo:"/static/img/shot-7.jpg", thumbnail:"/static/img/thumbnail-shot-7.jpg", bottom_light:true, main_light:true, top_light:true },
-		{ title:"عکس شماره ۸",description_1:"این متن درباره عکسی که در صفحه می بینید میباسد! ", description_2:"می باشد!", backspace:8, photo:"/static/img/shot-8.jpg", thumbnail:"/static/img/thumbnail-shot-8.jpg", bottom_light:true, main_light:true, top_light:false },
-		{ title:"عکس شماره ۹",description_1:"این متن درباره عکسی که در صفحه می بینید میباسد! ", description_2:"می باشد!", backspace:8, photo:"/static/img/shot-9.jpg", thumbnail:"/static/img/thumbnail-shot-9.jpg", bottom_light:true, main_light:true, top_light:true },
-		{ title:"عکس شماره ۱۰",description_1:"این متن درباره عکسی که در صفحه می بینید میباسد! ", description_2:"می باشد!", backspace:8, photo:"/static/img/shot-10.jpg", thumbnail:"/static/img/thumbnail-shot-10.jpg",  bottom_light:true , main_light:true, top_light:true }
+		{
+			title:"عکس شماره ۱",
+			description:"این متن درباره عکسی که در صفحه می بینید میباسد!",
+			description_trail:"می باشد!",
+			trail:7,
+			photo:"/static/img/shot-1.jpg",
+			thumbnail:"/static/img/thumbnail-shot-1.jpg",
+			bottombar_light:true,
+			zone_light:true,
+			topbar_light:true 
+		},
 	]
 	render() {
 		return (
