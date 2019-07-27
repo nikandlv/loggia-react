@@ -4,7 +4,7 @@ import { BottomBar } from '../components/BottomBar';
 import TopBar from '../components/TopBar';
 import Fullscreen from "react-full-screen";
 import BottomSheet from '../components/BottomSheet';
-
+import Items from '../resources/items.json'
 export default class index extends React.Component {
 	state = {
 		active:0,
@@ -41,19 +41,7 @@ export default class index extends React.Component {
 	setOverview = (overview) => {
 		this.setState({overview})
 	}
-	items = [
-		{
-			title:"عکس شماره ۱",
-			description:"این متن درباره عکسی که در صفحه می بینید میباسد!",
-			description_trail:"می باشد!",
-			trail:7,
-			photo:"/static/img/shot-1.jpg",
-			thumbnail:"/static/img/thumbnail-shot-1.jpg",
-			bottombar_light:true,
-			zone_light:true,
-			topbar_light:true 
-		},
-	]
+	items = Items
 	render() {
 		return (
 			<Fullscreen
