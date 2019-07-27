@@ -11,7 +11,9 @@ export class Gallery extends React.Component {
     shouldComponentUpdate(props) {
         let newActive = props.active
         let oldActive = this.props.active
-        if(oldActive === newActive) {
+        let newLanguage = props.language
+        let oldLanguage = this.props.language
+        if(oldActive === newActive && oldLanguage === newLanguage) {
             return false
         }
         return true

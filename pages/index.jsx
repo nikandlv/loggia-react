@@ -6,17 +6,38 @@ import Fullscreen from "react-full-screen";
 import BottomSheet from '../components/BottomSheet';
 import Items from '../resources/items.json'
 export default class index extends React.Component {
+	constructor(props) {
+		super(props)
+		this.updateLanguage(true,this.state.language)
+	}
 	state = {
 		active:0,
 		fullscreen:false,
 		overview:false,
-		language:'fa'
+		language:'fa',
+	}
+	updateLanguage = (nostate, language) => {
+		let itemsTemp = [];
+		Items.map((value,key) => {
+			itemsTemp.push({...value,...value.about[language]})
+		})
+		if(nostate) {
+			this.state.language = language
+			this.state.items = itemsTemp
+		} else {
+			clearTimeout(this.timeOut );
+			this.setState({
+				items:itemsTemp,
+				language
+			})
+			
+		}
 	}
 	timeOut = []
 	continueLoop = () => {
 		this.timeOut = window.setTimeout(()=> {
             let active = this.state.active
-            if(active === (this.items.length - 1)) {
+            if(active === (this.state.items.length - 1)) {
                 active = 0
             } else {
                 active += 1
@@ -41,18 +62,46 @@ export default class index extends React.Component {
 	setOverview = (overview) => {
 		this.setState({overview})
 	}
-	items = Items
 	render() {
 		return (
 			<Fullscreen
 			enabled={this.state.fullscreen}
 			onChange={isFull => this.setFullscreen(isFull)}
+			key={this.state.language}
 		  >
-			<Wrapper>
-				<TopBar fullscreen={this.state.fullscreen} setFullscreen={this.setFullscreen} items={this.items} active={this.state.active} setItem={this.setItem} continueLoop={this.continueLoop}/>
-				<Gallery fullscreen={this.state.fullscreen} items={this.items} active={this.state.active} setItem={this.setItem} continueLoop={this.continueLoop} />
-				<BottomBar setOverview={this.setOverview} items={this.items} active={this.state.active} setItem={this.setItem} />
-				<BottomSheet setOverview={this.setOverview} items={this.items} active={this.state.active} setItem={this.setItem} open={this.state.overview}/>
+			<Wrapper direction={this.state.language == 'fa' ? 'rtl' : 'ltr'}>
+				<TopBar
+					updateLanguage={this.updateLanguage}
+					language={this.state.language}
+					fullscreen={this.state.fullscreen}
+					setFullscreen={this.setFullscreen}
+					items={this.state.items}
+					active={this.state.active}
+					setItem={this.setItem}
+					continueLoop={this.continueLoop}
+					/>
+				<Gallery
+					language={this.state.language}
+					fullscreen={this.state.fullscreen}
+					items={this.state.items}
+					active={this.state.active}
+					setItem={this.setItem}
+					continueLoop={this.continueLoop}
+					/>
+				<BottomBar
+					setOverview={this.setOverview}
+					items={this.state.items}
+					active={this.state.active}
+					setItem={this.setItem}
+					language={this.state.language}
+					/>
+				<BottomSheet
+					setOverview={this.setOverview}
+					items={this.state.items}
+					active={this.state.active}
+					setItem={this.setItem}
+					open={this.state.overview}
+					/>
 			</Wrapper>
 			</Fullscreen>
 		)

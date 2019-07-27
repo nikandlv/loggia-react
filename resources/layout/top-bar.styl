@@ -7,8 +7,14 @@
     display flex
     padding 1.3rem
     box-sizing border-box
+    align-items: center
     &.light
-        svg
+        svg,.language-icon
+            span
+                user-select none
+                vertical-align: sub
+                line-height: 0.1px
+            color: white
             width 24px
             height 24px
             .icon
@@ -24,7 +30,12 @@
             transition background-color 200ms
             &:hover
                 background-color: rgba(0,0,0,0.3)
-            svg
+            svg,.language-icon
+                color: black
+                span
+                    vertical-align: sub
+                    line-height: 0.1px
+                    user-select none
                 width 24px
                 height 24px
                 .icon

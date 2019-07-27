@@ -1,11 +1,42 @@
 [
     {
-        "title":"عکس شماره ۱",
-        "description":"این متن درباره عکسی که در صفحه می بینید میباسد!",
-        "description_trail":"می باشد!",
-        "trail":7,
+        "about": {
+            "en": {
+                "title":"Photo #1",
+                "description":"This description is about the phooto",
+                "description_trail":"photo!",
+                "trail":6
+            },
+            "fa": {
+                "title":"عکس شماره ۱",
+                "description":"این متن درباره عکسی که در صفحه می بینید میباسد!",
+                "description_trail":"می باشد!",
+                "trail":7
+            }
+        },
         "photo":"/static/img/shot-1.jpg",
         "thumbnail":"/static/img/thumbnail-shot-1.jpg",
+        "bottombar_light":true,
+        "zone_light":true,
+        "topbar_light":true 
+    },
+    {
+        "about": {
+            "en": {
+                "title":"Photo #2",
+                "description":"This description is about the phooto",
+                "description_trail":"photo!",
+                "trail":6
+            },
+            "fa": {
+                "title":"عکس شماره ۲",
+                "description":"این متن درباره عکسی که در صفحه می بینید میباسد!",
+                "description_trail":"می باشد!",
+                "trail":7
+            }
+        },
+        "photo":"/static/img/shot-2.jpg",
+        "thumbnail":"/static/img/thumbnail-shot-2.jpg",
         "bottombar_light":true,
         "zone_light":true,
         "topbar_light":true 

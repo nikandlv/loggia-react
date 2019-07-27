@@ -7,7 +7,7 @@ export class BottomBar extends React.Component {
             <section className="bottom-bar">
                 {this.props.items.map((item,key) => {
                     return (
-                        <PhotoIndicator setItem={this.props.setItem} number={key+1} key={key} light={activeItem.bottombar_light} title={item.title} active={key === this.props.active} />
+                        <PhotoIndicator language={this.props.language} setItem={this.props.setItem} number={key+1} key={key} light={activeItem.bottombar_light} title={item.title} active={key === this.props.active} />
                     )
                 })}
                 <div className={`expand-icon-wrapper ${activeItem.bottombar_light?'light':''}`}>

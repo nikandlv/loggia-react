@@ -1,12 +1,14 @@
 html,body
     overflow hidden
-    direction: rtl
     background #28354c
 .wrapper
+    direction: rtl
+    &.ltr
+        direction: ltr !important
     min-height 100vh
     max-height 100vh
-    min-width 100vh
-    max-width 100vh
+    min-width 100vw
+    max-width 100vw
     height 100vh
     width 100%
     overflow hidden
