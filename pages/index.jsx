@@ -17,6 +17,7 @@ export default class index extends React.Component {
 		language:'fa',
 	}
 	updateLanguage = (nostate, language) => {
+		global.clearTimeout(this.timeOut);
 		let itemsTemp = [];
 		Items.map((value,key) => {
 			itemsTemp.push({...value,...value.about[language]})
@@ -25,7 +26,7 @@ export default class index extends React.Component {
 			this.state.language = language
 			this.state.items = itemsTemp
 		} else {
-			clearTimeout(this.timeOut );
+			global.clearTimeout(this.timeOut);
 			this.setState({
 				items:itemsTemp,
 				language
@@ -43,7 +44,7 @@ export default class index extends React.Component {
                 active += 1
             }
 			this.setItem(active)
-		
+			global.clearTimeout(this.timeOut);
 		},6000)
 	}
 	setFullscreen = (fullscreen) => {
@@ -57,7 +58,7 @@ export default class index extends React.Component {
 		this.setState({
 			active
 		})
-		clearTimeout(this.timeOut );
+		global.clearTimeout(this.timeOut );
 	}
 	setOverview = (overview) => {
 		this.setState({overview})
