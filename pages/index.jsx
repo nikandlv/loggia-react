@@ -14,7 +14,7 @@ export default class index extends React.Component {
 		active:0,
 		fullscreen:false,
 		overview:false,
-		language:'fa',
+		language:'en',
 	}
 	updateLanguage = (nostate, language) => {
 		global.clearTimeout(this.timeOut);
