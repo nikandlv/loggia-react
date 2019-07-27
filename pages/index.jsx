@@ -101,6 +101,7 @@ export default class index extends React.Component {
 					active={this.state.active}
 					setItem={this.setItem}
 					open={this.state.overview}
+					language={this.state.language}
 					/>
 			</Wrapper>
 			</Fullscreen>
