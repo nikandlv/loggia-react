@@ -67,9 +67,8 @@ export default class index extends React.Component {
 			<Fullscreen
 			enabled={this.state.fullscreen}
 			onChange={isFull => this.setFullscreen(isFull)}
-			key={this.state.language}
 		  >
-			<Wrapper direction={this.state.language == 'fa' ? 'rtl' : 'ltr'}>
+			<Wrapper direction={this.state.language == 'fa' ? 'rtl' : 'ltr'} key={this.state.language}>
 				<TopBar
 					updateLanguage={this.updateLanguage}
 					language={this.state.language}
