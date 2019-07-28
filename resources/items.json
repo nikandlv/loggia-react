@@ -15,7 +15,7 @@
             }
         },
         "photo":"/static/img/shot-1.jpg",
-        "thumbnail":"/static/img/shot-1.jpg",
+        "thumbnail":"/static/img/thumbnail-shot-1.jpg",
         "bottombar_light":true,
         "zone_light":true,
         "topbar_light":true 
@@ -36,7 +36,7 @@
             }
         },
         "photo":"/static/img/shot-2.jpg",
-        "thumbnail":"/static/img/shot-2.jpg",
+        "thumbnail":"/static/img/thumbnail-shot-2.jpg",
         "bottombar_light":true,
         "zone_light":true,
         "topbar_light":false 
@@ -57,7 +57,7 @@
             }
         },
         "photo":"/static/img/shot-3.jpg",
-        "thumbnail":"/static/img/shot-3.jpg",
+        "thumbnail":"/static/img/thumbnail-shot-3.jpg",
         "bottombar_light":true,
         "zone_light":true,
         "topbar_light":true 
@@ -78,7 +78,7 @@
             }
         },
         "photo":"/static/img/shot-4.jpg",
-        "thumbnail":"/static/img/shot-4.jpg",
+        "thumbnail":"/static/img/thumbnail-shot-4.jpg",
         "bottombar_light":true,
         "zone_light":true,
         "topbar_light":true 
@@ -99,7 +99,7 @@
             }
         },
         "photo":"/static/img/shot-5.jpg",
-        "thumbnail":"/static/img/shot-5.jpg",
+        "thumbnail":"/static/img/thumbnail-shot-5.jpg",
         "bottombar_light":true,
         "zone_light":true,
         "topbar_light":false 
@@ -120,7 +120,7 @@
             }
         },
         "photo":"/static/img/shot-6.jpg",
-        "thumbnail":"/static/img/shot-6.jpg",
+        "thumbnail":"/static/img/thumbnail-shot-6.jpg",
         "bottombar_light":false,
         "zone_light":false,
         "topbar_light":false 
@@ -141,7 +141,7 @@
             }
         },
         "photo":"/static/img/shot-7.jpg",
-        "thumbnail":"/static/img/shot-7.jpg",
+        "thumbnail":"/static/img/thumbnail-shot-7.jpg",
         "bottombar_light":true,
         "zone_light":true,
         "topbar_light":false 
@@ -162,7 +162,7 @@
             }
         },
         "photo":"/static/img/shot-8.jpg",
-        "thumbnail":"/static/img/shot-8.jpg",
+        "thumbnail":"/static/img/thumbnail-shot-8.jpg",
         "bottombar_light":false,
         "zone_light":true,
         "topbar_light":true 
@@ -183,7 +183,7 @@
             }
         },
         "photo":"/static/img/shot-9.jpg",
-        "thumbnail":"/static/img/shot-9.jpg",
+        "thumbnail":"/static/img/thumbnail-shot-9.jpg",
         "bottombar_light":true,
         "zone_light":true,
         "topbar_light":false 
@@ -204,7 +204,7 @@
             }
         },
         "photo":"/static/img/shot-10.jpg",
-        "thumbnail":"/static/img/shot-10.jpg",
+        "thumbnail":"/static/img/thumbnail-shot-10.jpg",
         "bottombar_light":false,
         "zone_light":true,
         "topbar_light":false 
