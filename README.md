@@ -5,7 +5,7 @@ iran is a web gallery, to show the beauties of iran
 * Supports HQ photos without any hiccups
 * As many as photots you want
 * Lazy Load and proper loading wait
-
+* MultiLanguage with rtl support
 #### Run
 
 `npm install`
