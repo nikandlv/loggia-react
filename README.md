@@ -1,6 +1,6 @@
 ### Loggia-react 
 
-Loggia is a web gallery, to show the beauties of iran
+Loggia is a web gallery
 
 * Supports HQ photos without any hiccups
 * As many as photots you want
@@ -22,9 +22,9 @@ Visit `localhost:3000`
 
 #### Demo
 
-<a href="https://neoxus.ir/demo/iran-react">Demo</a>
+<a href="https://neoxus.ir/demo/loggia-react">Demo</a>
 
-##### iran-react is a part of http://neoxus.ir project
+##### loggia-react is a part of http://neoxus.ir project
 
 You are free to use as you like as long as you give the right credits to the project and to the designer
 

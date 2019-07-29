@@ -1,7 +1,7 @@
 {
-  "name": "iran-react",
+  "name": "loggia-react",
   "version": "1.0.0",
-  "description": "iran is a web gallery, to show the beauties of iran",
+  "description": "loggia is a web gallery",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
