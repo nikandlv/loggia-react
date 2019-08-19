@@ -1,20 +1,21 @@
 import * as types from '../Actions/types'
 
 const initialState = {
-    counter: 0
+    fullscreen: false,
+    language: 'en'
 }
 
-export default function CounterReducer(state = initialState,action) {
+export default function GalleryReducer(state = initialState,action) {
     switch(action.type) {
-        case types.INCREASE_BY:
+        case types.SET_FULLSCREEN:
             return {
                 ...state,
-                counter: state.counter + action.payload
+                fullscreen: action.payload
             }
-        case types.DECREASE_BY:
+        case types.SET_LANGUAGE:
             return {
                 ...state,
-                counter: state.counter - action.payload
+                language: action.payload
             }
         default:
             return state;

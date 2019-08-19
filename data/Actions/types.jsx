@@ -1,2 +1,2 @@
-export const INCREASE_BY = 'INCREASE_BY'
-export const DECREASE_BY = 'DECREASE_BY'
+export const SET_FULLSCREEN = 'SET_FULLSCREEN'
+export const SET_LANGUAGE = 'SET_LANGUAGE'
