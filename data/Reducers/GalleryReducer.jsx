@@ -21,6 +21,16 @@ export default function GalleryReducer(state = initialState,action) {
                 ...state,
                 language: action.payload
             }
+        case types.SET_OVERVIEW:
+            return {
+                ...state,
+                overview: action.payload
+            }
+        case types.SET_CURRENT:
+            return {
+                ...state,
+                active: action.payload
+            }
         default:
             return state;
     }

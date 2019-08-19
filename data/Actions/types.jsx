@@ -1,2 +1,4 @@
 export const SET_FULLSCREEN = 'SET_FULLSCREEN'
 export const SET_LANGUAGE = 'SET_LANGUAGE'
+export const SET_OVERVIEW = 'SET_OVERVIEW'
+export const SET_CURRENT = 'SET_CURRENT'
