@@ -1,16 +1,30 @@
 import * as types from './types'
 
-export const increaseBy = (number) => (dispatch) => {
+export const setFullscreen = (fullscreen) => (dispatch) => {
     dispatch({
-        type:types.INCREASE_BY,
-        payload: number
+        type:types.SET_FULLSCREEN,
+        payload: fullscreen
     })
 }
 
 
-export const decreaseBy = (number) => (dispatch) => {
+export const setLanguage = (language) => (dispatch) => {
     dispatch({
-        type:types.DECREASE_BY,
-        payload: number
+        type:types.SET_LANGUAGE,
+        payload: language
+    })
+}
+
+export const setOverview = (overview) => (dispatch) => {
+    dispatch({
+        type:types.SET_OVERVIEW,
+        payload: overview
+    })
+}
+
+export const setCurrent = (current) => (dispatch) => {
+    dispatch({
+        type:types.SET_CURRENT,
+        payload: current
     })
 }
