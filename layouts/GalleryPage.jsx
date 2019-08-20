@@ -4,19 +4,12 @@ import { BottomBar } from '../components/BottomBar';
 import TopBar from '../components/TopBar';
 import Fullscreen from "react-full-screen";
 import BottomSheet from '../components/BottomSheet';
-import Items from '../resources/items.json'
 import Store from '../data/Store';
 import GalleryReducer from '../data/Reducers/GalleryReducer';
 Store.injectReducer('GalleryReducer',GalleryReducer)
 export default class GalleryPage extends React.Component {
 	constructor(props) {
 		super(props)
-	}
-	state = {
-		active:0,
-		fullscreen:false,
-		overview:false,
-		language:'en',
 	}
 	render() {
 		return (
