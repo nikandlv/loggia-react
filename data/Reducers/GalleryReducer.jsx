@@ -6,7 +6,7 @@ const initialState = {
     language: 'en',
     rtl: false,
     current: 0,
-    current_id: 0,
+    current_index: 0,
     photos: Items,
     overview: false,
 }
@@ -31,7 +31,7 @@ export default function GalleryReducer(state = initialState,action) {
         case types.SET_CURRENT:
             return {
                 ...state,
-                current_id: action.payload,
+                current_index: action.payload,
                 current: state.items[action.payload]
             }
         default:
