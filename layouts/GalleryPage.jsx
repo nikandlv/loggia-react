@@ -11,60 +11,12 @@ Store.injectReducer('GalleryReducer',GalleryReducer)
 export default class GalleryPage extends React.Component {
 	constructor(props) {
 		super(props)
-		this.updateLanguage(true,this.state.language)
 	}
 	state = {
 		active:0,
 		fullscreen:false,
 		overview:false,
 		language:'en',
-	}
-	updateLanguage = (nostate, language) => {
-		global.clearTimeout(this.timeOut);
-		let itemsTemp = [];
-		Items.map((value,key) => {
-			itemsTemp.push({...value,...value.about[language]})
-		})
-		if(nostate) {
-			this.state.language = language
-			this.state.items = itemsTemp
-		} else {
-			global.clearTimeout(this.timeOut);
-			this.setState({
-				items:itemsTemp,
-				language
-			})
-			
-		}
-	}
-	timeOut = []
-	continueLoop = () => {
-		this.timeOut = window.setTimeout(()=> {
-            let active = this.state.active
-            if(active === (this.state.items.length - 1)) {
-                active = 0
-            } else {
-                active += 1
-            }
-			this.setItem(active)
-			global.clearTimeout(this.timeOut);
-		},6000)
-	}
-	setFullscreen = (fullscreen) => {
-		if(fullscreen && this.state.fullscreen) {
-			return
-		}
-		this.setState({fullscreen})
-		
-	}
-	setItem = (active) => {
-		this.setState({
-			active
-		})
-		global.clearTimeout(this.timeOut );
-	}
-	setOverview = (overview) => {
-		this.setState({overview})
 	}
 	render() {
 		return (
