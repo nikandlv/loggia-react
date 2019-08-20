@@ -5,8 +5,7 @@ import TopBar from '../components/TopBar';
 import Fullscreen from "react-full-screen";
 import BottomSheet from '../components/BottomSheet';
 import Store from '../data/Store';
-import GalleryReducer from '../data/Reducers/GalleryReducer';
-import {connect} from 'react-redux'
+import GalleryReducer, { withGallery } from '../data/Reducers/GalleryReducer';
 Store.injectReducer('GalleryReducer',GalleryReducer)
 class GalleryPage extends React.Component {
 	constructor(props) {
@@ -28,9 +27,5 @@ class GalleryPage extends React.Component {
 		)
 	}
 }
-const mapStateToProps = (state) => {
-	return {
-		...state.GalleryReducer
-	}
-}
-export default connect()(GalleryPage)
+
+export default withGallery(GalleryPage)

@@ -1,3 +1,4 @@
+import {connect} from 'react-redux'
 import * as types from '../Actions/types'
 import Items from '../../resources/items.json'
 
@@ -37,4 +38,13 @@ export default function GalleryReducer(state = initialState,action) {
         default:
             return state;
     }
+}
+
+export const withGallery = (component) => {
+    const mapStateToProps = (state) => {
+        return {
+            ...state.GalleryReducer
+        }
+    }
+    return connect(mapStateToProps)(component)
 }
