@@ -1,6 +1,7 @@
 import React from 'react'
 import Typist from 'react-typist';
-export default class PhotoZone extends React.Component {
+import { withGallery } from '../../data/Reducers/GalleryReducer';
+class PhotoZone extends React.Component {
     constructor(props) {
         super(props)
         this.view = React.createRef();
@@ -29,26 +30,27 @@ export default class PhotoZone extends React.Component {
         return false
     }
     render() {
-        const {items,active} = this.props;
-        const item = items[active];
+        const {current, current_id, language} = this.props;
         return (
             <div>
                 <div className="zone">
-                    <img alt="image" src={item.photo} onLoad={this.updateItem} style={{display:'none'}} />
-                    <div className={`view active loaded`} ref={this.view} style={{backgroundImage:`url(${item.photo})`}}>
+                    <img alt="image" src={current.photo} onLoad={this.updateItem} style={{display:'none'}} />
+                    <div className={`view active loaded`} ref={this.view} style={{backgroundImage:`url(${current.photo})`}}>
                     </div>
                     <div className="overlay" ref={this.overlay} />
-                    <div className={`text ${item.zone_light?"light":""}`}>
-                        <Typist key={active} avgTypingDelay={50} startDelay={20}>
-                            <h1>{item.title}</h1>
-                            <span>{item.description}</span>
-                            <Typist.Backspace count={item.trail} />
-                            <span>{item.description_trail}</span>
+                    <div className={`text ${current.zone_light?"light":""}`}>
+                        <Typist key={current_id} avgTypingDelay={50} startDelay={20}>
+                            <h1>{current.about[language].title}</h1>
+                            <span>{current.about[language].description}</span>
+                            <Typist.Backspace count={current.about[language].trail} />
+                            <span>{current.about[language].description_trail}</span>
                         </Typist>
                     </div>
                 </div>
-                <div className={`progress loading ${item.bottombar_light?"light":""}`} ref={this.progress} />
+                <div className={`progress loading ${current.bottombar_light?"light":""}`} ref={this.progress} />
             </div>
         )
     }
 }
+
+export default  withGallery(PhotoZone)

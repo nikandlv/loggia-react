@@ -1,9 +1,9 @@
 import Thumbnail from "../Gallery/Thumbnail";
 import Typist from 'react-typist';
+import { withGallery } from "../../data/Reducers/GalleryReducer";
 
-export default function BottomSheet(props) {
-    const {items, active, setOverview, setItem, language} = props
-    const activeItem = items[active]
+function BottomSheet(props) {
+    const {photos, current, current_id, setOverview, setItem, language} = props
     return (
         <div className={`bottom-sheet ${props.open?" open":""}`}>
             <div className="expand-icon-wrapper">
@@ -16,36 +16,37 @@ export default function BottomSheet(props) {
                 <h1>{language === 'fa' ? 'گالری باحال من' : 'My Awesome Gallery'}</h1>
                 <div className="thumbnail-wrapper">
                     <div className="row">
-                        {items.map((item,key)=> {
+                        {photos.map((item,key)=> {
                             if(key % 2 === 1) {
                                 return
                             }
                             return (
-                                <Thumbnail onClick={()=> setItem(key)} photo={item.thumbnail} active={key === active} key={key}/>
+                                <Thumbnail onClick={()=> setItem(key)} photo={item.thumbnail} active={key === current_id} key={key}/>
                             )
                         })}
                     </div>
                     <div className="row">
-                        {items.map((item,key)=> {
+                        {photos.map((item,key)=> {
                             if(key % 2 === 0) {
                                 return
                             }
                             return (
-                                <Thumbnail onClick={()=> setItem(key)} photo={item.thumbnail} active={key === active} key={key}/>
+                                <Thumbnail onClick={()=> setItem(key)} photo={item.thumbnail} active={key === current_id} key={key}/>
                             )
                         })}
                     </div>
                 </div>
             <div>
-            <Typist key={active} avgTypingDelay={50} startDelay={20}>
-                <h1>{activeItem.title}</h1>
+            <Typist key={current_id} avgTypingDelay={50} startDelay={20}>
+                <h1>{current.title}</h1>
                 
-            <span>{activeItem.description}</span>
-                <Typist.Backspace count={activeItem.trail} />
-                <span>{activeItem.description_trail}</span>
+            <span>{current.description}</span>
+                <Typist.Backspace count={current.trail} />
+                <span>{current.description_trail}</span>
             </Typist>
             </div>
             </div>
         </div>
     )
 }
+export default withGallery(BottomSheet)
