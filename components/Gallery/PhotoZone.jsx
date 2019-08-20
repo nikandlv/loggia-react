@@ -7,19 +7,12 @@ export default class PhotoZone extends React.Component {
         this.progress = React.createRef();
         this.transition = false
     }
-    state = {
-        current:{title:"",photo:""},
-    }
-    componentDidMount() {
-        this.updateItem()
-    }
     updateItem = () => {
         window.setTimeout(()=> {
             this.view.current.className = this.view.current.className.replace("loading","loaded")
             this.progress.current.className = this.progress.current.className.replace("loading","loaded")
             this.transition = false
             this.forceUpdate()
-            this.props.continueLoop()
         },370)
     }
     shouldComponentUpdate() {

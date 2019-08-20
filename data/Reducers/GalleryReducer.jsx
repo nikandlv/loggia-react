@@ -1,12 +1,14 @@
 import * as types from '../Actions/types'
-import Items from '../resources/items.json'
+import Items from '../../resources/items.json'
 
 const initialState = {
     fullscreen: false,
     language: 'en',
-    active: 0,
+    rtl: false,
+    current: 0,
+    current_index: 0,
     photos: Items,
-    overview: false
+    overview: false,
 }
 
 export default function GalleryReducer(state = initialState,action) {
@@ -29,7 +31,8 @@ export default function GalleryReducer(state = initialState,action) {
         case types.SET_CURRENT:
             return {
                 ...state,
-                active: action.payload
+                current_index: action.payload,
+                current: state.items[action.payload]
             }
         default:
             return state;
