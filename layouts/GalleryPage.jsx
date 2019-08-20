@@ -1,6 +1,6 @@
 import Wrapper from '../components/Wrapper'
 import { Gallery } from '../components/Gallery';
-import { BottomBar } from '../components/BottomBar';
+import BottomBar from '../components/BottomBar';
 import TopBar from '../components/TopBar';
 import Fullscreen from "react-full-screen";
 import BottomSheet from '../components/BottomSheet';
