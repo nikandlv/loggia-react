@@ -9,7 +9,6 @@ const initialState = {
     current_id: 0,
     photos: Items,
     overview: false,
-    going: false
 }
 
 export default function GalleryReducer(state = initialState,action) {
