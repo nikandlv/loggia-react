@@ -1,5 +1,5 @@
 import * as types from '../Actions/types'
-import Items from '../resources/items.json'
+import Items from '../../resources/items.json'
 
 const initialState = {
     fullscreen: false,
