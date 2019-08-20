@@ -6,7 +6,8 @@ const initialState = {
     language: 'en',
     active: 0,
     photos: Items,
-    overview: false
+    overview: false,
+    going: false
 }
 
 export default function GalleryReducer(state = initialState,action) {

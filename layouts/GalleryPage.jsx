@@ -73,39 +73,10 @@ export default class GalleryPage extends React.Component {
 			onChange={isFull => this.setFullscreen(isFull)}
 		  >
 			<Wrapper direction={this.state.language == 'fa' ? 'rtl' : 'ltr'} key={this.state.language}>
-				<TopBar
-					updateLanguage={this.updateLanguage}
-					language={this.state.language}
-					fullscreen={this.state.fullscreen}
-					setFullscreen={this.setFullscreen}
-					items={this.state.items}
-					active={this.state.active}
-					setItem={this.setItem}
-					continueLoop={this.continueLoop}
-					/>
-				<Gallery
-					language={this.state.language}
-					fullscreen={this.state.fullscreen}
-					items={this.state.items}
-					active={this.state.active}
-					setItem={this.setItem}
-					continueLoop={this.continueLoop}
-					/>
-				<BottomBar
-					setOverview={this.setOverview}
-					items={this.state.items}
-					active={this.state.active}
-					setItem={this.setItem}
-					language={this.state.language}
-					/>
-				<BottomSheet
-					setOverview={this.setOverview}
-					items={this.state.items}
-					active={this.state.active}
-					setItem={this.setItem}
-					open={this.state.overview}
-					language={this.state.language}
-					/>
+				<TopBar />
+				<Gallery />
+				<BottomBar />
+				<BottomSheet />
 			</Wrapper>
 			</Fullscreen>
 		)
