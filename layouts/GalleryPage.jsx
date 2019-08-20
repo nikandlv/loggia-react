@@ -6,18 +6,19 @@ import Fullscreen from "react-full-screen";
 import BottomSheet from '../components/BottomSheet';
 import Store from '../data/Store';
 import GalleryReducer from '../data/Reducers/GalleryReducer';
+import {connect} from 'react-redux'
 Store.injectReducer('GalleryReducer',GalleryReducer)
-export default class GalleryPage extends React.Component {
+class GalleryPage extends React.Component {
 	constructor(props) {
 		super(props)
 	}
 	render() {
 		return (
 			<Fullscreen
-			enabled={this.state.fullscreen}
+			enabled={this.props.fullscreen}
 			onChange={isFull => this.setFullscreen(isFull)}
 		  >
-			<Wrapper direction={this.state.language == 'fa' ? 'rtl' : 'ltr'} key={this.state.language}>
+			<Wrapper direction={this.props.rtl ? 'rtl' : 'ltr'} key={this.props.language}>
 				<TopBar />
 				<Gallery />
 				<BottomBar />
@@ -27,3 +28,9 @@ export default class GalleryPage extends React.Component {
 		)
 	}
 }
+const mapStateToProps = (state) => {
+	return {
+		...state.GalleryReducer
+	}
+}
+export default connect()(GalleryPage)
