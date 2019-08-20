@@ -6,12 +6,12 @@ const initialState = {
     fullscreen: false,
     language: 'en',
     rtl: false,
-    current: 0,
     current_index: 0,
     photos: Items,
+    current: {},
     overview: false,
 }
-
+initialState.current = initialState.photos[0];
 export default function GalleryReducer(state = initialState,action) {
     switch(action.type) {
         case types.SET_FULLSCREEN:

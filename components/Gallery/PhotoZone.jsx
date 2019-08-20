@@ -30,7 +30,7 @@ class PhotoZone extends React.Component {
         return false
     }
     render() {
-        const {items,current, current_id} = this.props;
+        const {current, current_id, language} = this.props;
         return (
             <div>
                 <div className="zone">
@@ -40,10 +40,10 @@ class PhotoZone extends React.Component {
                     <div className="overlay" ref={this.overlay} />
                     <div className={`text ${current.zone_light?"light":""}`}>
                         <Typist key={current_id} avgTypingDelay={50} startDelay={20}>
-                            <h1>{current.title}</h1>
-                            <span>{current.description}</span>
-                            <Typist.Backspace count={current.trail} />
-                            <span>{current.description_trail}</span>
+                            <h1>{current.about[language].title}</h1>
+                            <span>{current.about[language].description}</span>
+                            <Typist.Backspace count={current.about[language].trail} />
+                            <span>{current.about[language].description_trail}</span>
                         </Typist>
                     </div>
                 </div>
