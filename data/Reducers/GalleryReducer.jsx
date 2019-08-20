@@ -4,7 +4,9 @@ import Items from '../../resources/items.json'
 const initialState = {
     fullscreen: false,
     language: 'en',
-    active: 0,
+    rtl: false,
+    current: 0,
+    current_id: 0,
     photos: Items,
     overview: false,
     going: false
@@ -30,7 +32,8 @@ export default function GalleryReducer(state = initialState,action) {
         case types.SET_CURRENT:
             return {
                 ...state,
-                active: action.payload
+                current_id: action.payload,
+                current: state.items[action.payload]
             }
         default:
             return state;
