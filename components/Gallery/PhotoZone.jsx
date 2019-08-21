@@ -1,6 +1,8 @@
 import React from 'react'
 import Typist from 'react-typist';
 import { withGallery } from '../../data/Reducers/GalleryReducer';
+let progressTransitionSet = false
+let progressCounter = 0
 class PhotoZone extends React.Component {
     constructor(props) {
         super(props)
@@ -12,18 +14,28 @@ class PhotoZone extends React.Component {
         window.setTimeout(()=> {
             this.view.current.className = this.view.current.className.replace("loading","loaded")
             this.progress.current.className = this.progress.current.className.replace("loading","loaded")
-            this.progress.current.addEventListener('transitionend', () => {
-                this.props.proceed()
-            });
+            if(!progressTransitionSet) {
+                this.progress.current.addEventListener('transitionend', () => {
+                    progressCounter++;
+                    if(progressCounter % 2 == 0) {
+                        return
+                    }
+                    console.log('called')
+                    this.props.proceed()
+                });
+                progressTransitionSet = true;
+            }
             this.transition = false
             this.forceUpdate()
         },370)
     }
     
     shouldComponentUpdate(props) {
-        if(this.props.fullscreen !== props.fullscreen) {            
+        if(this.props.fullscreen !== props.fullscreen) {
+            
             return false
         }
+        console.log('update')
         if(this.transition === true) {
             this.transition = false
             return true    
