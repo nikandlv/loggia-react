@@ -16,7 +16,9 @@ class PhotoZone extends React.Component {
             this.progress.current.className = this.progress.current.className.replace("loading","loaded")
             this.progress.current.addEventListener('transitionend', () => {
                 if(!this.transition) {
-                    this.props.proceed()
+                    if(!this.props.force) {
+                        this.props.proceed()
+                    }
                 }
             });
             this.transition = false
@@ -27,7 +29,11 @@ class PhotoZone extends React.Component {
     shouldComponentUpdate(props) {
         this.progress.current.addEventListener('transitionend', () => {
             if(!this.transition) {
-                this.props.proceed()
+                if(!this.props.force) {
+                    this.props.proceed()
+                } else if(this.props.force === true && this.props.force === props.force){
+                    this.props.proceed()
+                }
             }
         });
 
