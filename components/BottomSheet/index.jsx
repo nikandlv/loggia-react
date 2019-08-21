@@ -3,7 +3,7 @@ import Typist from 'react-typist';
 import { withGallery } from "../../data/Reducers/GalleryReducer";
 
 function BottomSheet(props) {
-    const {photos, current, current_id, setOverview, setItem, language} = props
+    const {photos, current, current_index, setOverview, setItem, language} = props
     return (
         <div className={`bottom-sheet ${props.open?" open":""}`}>
             <div className="expand-icon-wrapper">
@@ -21,7 +21,7 @@ function BottomSheet(props) {
                                 return
                             }
                             return (
-                                <Thumbnail onClick={()=> setItem(key)} photo={item.thumbnail} active={key === current_id} key={key}/>
+                                <Thumbnail onClick={()=> setItem(key)} photo={item.thumbnail} active={key === current_index} key={key}/>
                             )
                         })}
                     </div>
@@ -31,13 +31,13 @@ function BottomSheet(props) {
                                 return
                             }
                             return (
-                                <Thumbnail onClick={()=> setItem(key)} photo={item.thumbnail} active={key === current_id} key={key}/>
+                                <Thumbnail onClick={()=> setItem(key)} photo={item.thumbnail} active={key === current_index} key={key}/>
                             )
                         })}
                     </div>
                 </div>
             <div>
-            <Typist key={current_id} avgTypingDelay={50} startDelay={20}>
+            <Typist key={current_index} avgTypingDelay={50} startDelay={20}>
                 <h1>{current.title}</h1>
                 
             <span>{current.description}</span>
