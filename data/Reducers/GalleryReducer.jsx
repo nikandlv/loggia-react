@@ -32,6 +32,12 @@ export default function GalleryReducer(state = initialState,action) {
                 overview: action.payload
             }
         case types.SET_CURRENT:
+            if(state.force) {
+                return {
+                    ...state,
+                    force: false
+                }
+            }
             return {
                 ...state,
                 current_index: action.payload,

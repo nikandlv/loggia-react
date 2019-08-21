@@ -31,6 +31,8 @@ class PhotoZone extends React.Component {
             if(!this.transition) {
                 if(!this.props.force) {
                     this.props.proceed()
+                } else if(this.props.force === true && this.props.force === props.force){
+                    this.props.proceed()
                 }
             }
         });
