@@ -1,7 +1,7 @@
 import {connect} from 'react-redux'
 import * as types from '../Actions/types'
 import Items from '../../resources/items.json'
-import {setFullscreen} from '../Actions/GalleryActions'
+import {setFullscreen, setLanguage} from '../Actions/GalleryActions'
 const initialState = {
     fullscreen: false,
     language: 'en',
@@ -13,6 +13,7 @@ const initialState = {
 }
 initialState.current = initialState.photos[0];
 export default function GalleryReducer(state = initialState,action) {
+    console.log(action)
     switch(action.type) {
         case types.SET_FULLSCREEN:
             return {
@@ -22,7 +23,8 @@ export default function GalleryReducer(state = initialState,action) {
         case types.SET_LANGUAGE:
             return {
                 ...state,
-                language: action.payload
+                language: action.payload,
+                rtl: action.rtl
             }
         case types.SET_OVERVIEW:
             return {
@@ -47,7 +49,7 @@ export const withGallery = (component) => {
         }
     }
     const mapActionsToProps = {
-        setFullscreen
+        setFullscreen, setLanguage
     }
     return connect(mapStateToProps,mapActionsToProps)(component)
 }

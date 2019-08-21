@@ -1,12 +1,12 @@
 import { withGallery } from "../../data/Reducers/GalleryReducer";
 
 function TopBar(props) {
-    const {fullscreen, setFullscreen, current, updateLanguage, language} = props
+    const {fullscreen, setFullscreen, current, setLanguage, language} = props
     return (
         <div className={`top-bar ${(current.topbar_light?' light':'')}`}>
             <div>
                 <div className="language-icon" onClick={() => {
-                    updateLanguage(false,( language == 'fa' ? 'en' : 'fa' ))
+                    setLanguage(language == 'en',( language == 'fa' ? 'en' : 'fa' ))
                 }}>
                     <span>{language == 'fa' ? 'en' : 'fa'}</span>
                 </div>

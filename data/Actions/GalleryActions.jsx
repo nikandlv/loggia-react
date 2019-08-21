@@ -8,10 +8,11 @@ export const setFullscreen = (fullscreen) => (dispatch) => {
 }
 
 
-export const setLanguage = (language) => (dispatch) => {
+export const setLanguage = (rtl,language) => (dispatch) => {
     dispatch({
         type:types.SET_LANGUAGE,
-        payload: language
+        payload: language,
+        rtl
     })
 }
 
