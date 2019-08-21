@@ -1,6 +1,7 @@
 import 'normalize-stylus/normalize.styl'
 import '../../resources/App.styl'
-export default class Wrapper extends React.Component {
+import { withGallery } from '../../data/Reducers/GalleryReducer';
+class Wrapper extends React.Component {
     render() {
         return (
             <div className={`wrapper ${this.props.direction}`}>
@@ -9,3 +10,5 @@ export default class Wrapper extends React.Component {
         )
     }
 }
+
+export default withGallery(Wrapper)
