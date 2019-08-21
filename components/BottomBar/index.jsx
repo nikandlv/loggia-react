@@ -8,7 +8,7 @@ class BottomBar extends React.Component {
             <section className="bottom-bar">
                 {photos.map((item,key) => {
                     return (
-                        <PhotoIndicator language={this.props.language} setItem={this.props.setItem} number={key+1} key={key} light={current.bottombar_light} title={current.about[language].title} active={key === current_index} />
+                        <PhotoIndicator language={this.props.language} setItem={this.props.setCurrent} number={key+1} key={key} light={current.bottombar_light} title={item.about[language].title} active={key === current_index} />
                     )
                 })}
                 <div className={`expand-icon-wrapper ${current.bottombar_light?'light':''}`}>
