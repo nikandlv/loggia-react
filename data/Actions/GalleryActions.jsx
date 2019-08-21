@@ -47,5 +47,11 @@ let mainLoop = (dispatch) => {
 }
 
 export const proceed = () => (dispatch) => {
-    mainLoop(dispatch)
+    let store = Store.getState()
+    let current = store.GalleryReducer.current_index
+    let total = store.GalleryReducer.photos.length
+    dispatch({
+        type:types.SET_CURRENT,
+        payload: (total === current + 1) ? 0 : current + 1
+    })
 }

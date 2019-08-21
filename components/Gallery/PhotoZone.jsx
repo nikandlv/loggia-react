@@ -12,17 +12,18 @@ class PhotoZone extends React.Component {
         window.setTimeout(()=> {
             this.view.current.className = this.view.current.className.replace("loading","loaded")
             this.progress.current.className = this.progress.current.className.replace("loading","loaded")
+            this.progress.current.addEventListener('transitionend', () => {
+                this.props.proceed()
+            });
             this.transition = false
             this.forceUpdate()
         },370)
     }
     
     shouldComponentUpdate(props) {
-        if(this.props.fullscreen !== props.fullscreen) {
-            
+        if(this.props.fullscreen !== props.fullscreen) {            
             return false
         }
-        console.log('update')
         if(this.transition === true) {
             this.transition = false
             return true    
