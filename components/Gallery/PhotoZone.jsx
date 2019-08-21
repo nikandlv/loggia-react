@@ -16,7 +16,13 @@ class PhotoZone extends React.Component {
             this.forceUpdate()
         },370)
     }
-    shouldComponentUpdate() {
+    
+    shouldComponentUpdate(props) {
+        if(this.props.fullscreen !== props.fullscreen) {
+            
+            return false
+        }
+        console.log('update')
         if(this.transition === true) {
             this.transition = false
             return true    

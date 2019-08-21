@@ -12,10 +12,11 @@ class GalleryPage extends React.Component {
 		super(props)
 	}
 	render() {
+		const { setFullscreen } = this.props
 		return (
 			<Fullscreen
 			enabled={this.props.fullscreen}
-			onChange={isFull => this.setFullscreen(isFull)}
+			onChange={isFull => setFullscreen(isFull)}
 		  >
 			<Wrapper direction={this.props.rtl ? 'rtl' : 'ltr'} key={this.props.language}>
 				<TopBar />

@@ -1,7 +1,7 @@
 import {connect} from 'react-redux'
 import * as types from '../Actions/types'
 import Items from '../../resources/items.json'
-
+import {setFullscreen} from '../Actions/GalleryActions'
 const initialState = {
     fullscreen: false,
     language: 'en',
@@ -46,5 +46,8 @@ export const withGallery = (component) => {
             ...state.GalleryReducer
         }
     }
-    return connect(mapStateToProps)(component)
+    const mapActionsToProps = {
+        setFullscreen
+    }
+    return connect(mapStateToProps,mapActionsToProps)(component)
 }

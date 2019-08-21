@@ -1,7 +1,6 @@
 import { withGallery } from "../../data/Reducers/GalleryReducer";
 
 function TopBar(props) {
-    console.log(props)
     const {fullscreen, setFullscreen, current, updateLanguage, language} = props
     return (
         <div className={`top-bar ${(current.topbar_light?' light':'')}`}>
