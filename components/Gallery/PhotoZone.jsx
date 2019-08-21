@@ -14,28 +14,27 @@ class PhotoZone extends React.Component {
         window.setTimeout(()=> {
             this.view.current.className = this.view.current.className.replace("loading","loaded")
             this.progress.current.className = this.progress.current.className.replace("loading","loaded")
-            if(!progressTransitionSet) {
-                this.progress.current.addEventListener('transitionend', () => {
-                    progressCounter++;
-                    if(progressCounter % 2 == 0) {
-                        return
-                    }
-                    console.log('called')
+            this.progress.current.addEventListener('transitionend', () => {
+                if(!this.transition) {
                     this.props.proceed()
-                });
-                progressTransitionSet = true;
-            }
+                }
+            });
             this.transition = false
             this.forceUpdate()
         },370)
     }
     
     shouldComponentUpdate(props) {
+        this.progress.current.addEventListener('transitionend', () => {
+            if(!this.transition) {
+                this.props.proceed()
+            }
+        });
+
         if(this.props.fullscreen !== props.fullscreen) {
             
             return false
         }
-        console.log('update')
         if(this.transition === true) {
             this.transition = false
             return true    
@@ -49,16 +48,16 @@ class PhotoZone extends React.Component {
         return false
     }
     render() {
-        const {current, current_id, language} = this.props;
+        const {current, current_index, language} = this.props;
         return (
-            <div>
+            <div key={current_index}>
                 <div className="zone">
                     <img alt="image" src={current.photo} onLoad={this.updateItem} style={{display:'none'}} />
                     <div className={`view active loaded`} ref={this.view} style={{backgroundImage:`url(${current.photo})`}}>
                     </div>
                     <div className="overlay" ref={this.overlay} />
                     <div className={`text ${current.zone_light?"light":""}`}>
-                        <Typist key={current_id} avgTypingDelay={50} startDelay={20}>
+                        <Typist key={current_index} avgTypingDelay={50} startDelay={20}>
                             <h1>{current.about[language].title}</h1>
                             <span>{current.about[language].description}</span>
                             <Typist.Backspace count={current.about[language].trail} />

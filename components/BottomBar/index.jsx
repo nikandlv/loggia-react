@@ -3,12 +3,12 @@ import PhotoIndicator from '../PhotoIndicator';
 import { withGallery } from '../../data/Reducers/GalleryReducer';
 class BottomBar extends React.Component {
     render() {
-        const {current, current_id, photos} = this.props
+        const {current, current_index, photos} = this.props
         return (
             <section className="bottom-bar">
                 {photos.map((item,key) => {
                     return (
-                        <PhotoIndicator language={this.props.language} setItem={this.props.setItem} number={key+1} key={key} light={current.bottombar_light} title={item.title} active={key === current_id} />
+                        <PhotoIndicator language={this.props.language} setItem={this.props.setItem} number={key+1} key={key} light={current.bottombar_light} title={item.title} active={key === current_index} />
                     )
                 })}
                 <div className={`expand-icon-wrapper ${current.bottombar_light?'light':''}`}>
