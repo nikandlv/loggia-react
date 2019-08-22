@@ -40,7 +40,6 @@ export const setCurrentForce = (current) => (dispatch) => {
 
 
 export const proceed = () => (dispatch) => {
-    console.log(lock - (+new Date()))
     let date = +new Date();
     if(lock === 0) {
         lock = date
