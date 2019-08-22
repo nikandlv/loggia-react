@@ -38,11 +38,9 @@ class PhotoZone extends React.Component {
         });
 
         if(this.props.fullscreen !== props.fullscreen) {
-            
             return false
         }
         if(this.props.overview !== props.overview) {
-            
             return false
         }
         if(this.transition === true) {

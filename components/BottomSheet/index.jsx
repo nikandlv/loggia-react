@@ -1,9 +1,10 @@
 import Thumbnail from "../Gallery/Thumbnail";
 import Typist from 'react-typist';
 import { withGallery } from "../../data/Reducers/GalleryReducer";
+import { setCurrentForce } from "../../data/Actions/GalleryActions";
 
 function BottomSheet(props) {
-    const {photos, current, current_index, overview, setOverview, setItem, language} = props
+    const {photos, current, current_index, overview, setOverview, setCurrentForce, language} = props
     return (
         <div className={`bottom-sheet ${overview?" open":""}`}>
             <div className="expand-icon-wrapper">
@@ -21,7 +22,7 @@ function BottomSheet(props) {
                                 return
                             }
                             return (
-                                <Thumbnail onClick={()=> setItem(key)} photo={item.thumbnail} active={key === current_index} key={key}/>
+                                <Thumbnail onClick={()=> setCurrentForce(key)} photo={item.thumbnail} active={key === current_index} key={key}/>
                             )
                         })}
                     </div>
@@ -31,7 +32,7 @@ function BottomSheet(props) {
                                 return
                             }
                             return (
-                                <Thumbnail onClick={()=> setItem(key)} photo={item.thumbnail} active={key === current_index} key={key}/>
+                                <Thumbnail onClick={()=> setCurrentForce(key)} photo={item.thumbnail} active={key === current_index} key={key}/>
                             )
                         })}
                     </div>
