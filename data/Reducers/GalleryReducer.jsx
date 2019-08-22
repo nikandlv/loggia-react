@@ -1,7 +1,7 @@
 import {connect} from 'react-redux'
 import * as types from '../Actions/types'
 import Items from '../../resources/items.json'
-import {setFullscreen, setLanguage, proceed, setCurrent, setCurrentForce} from '../Actions/GalleryActions'
+import {setFullscreen, setLanguage, proceed, setCurrent, setCurrentForce, setOverview} from '../Actions/GalleryActions'
 const initialState = {
     fullscreen: false,
     language: 'en',
@@ -63,7 +63,7 @@ export const withGallery = (component) => {
         }
     }
     const mapActionsToProps = {
-        setFullscreen, setLanguage, proceed, setCurrent, setCurrentForce
+        setFullscreen, setLanguage, proceed, setCurrent, setCurrentForce, setOverview
     }
     return connect(mapStateToProps,mapActionsToProps)(component)
 }
