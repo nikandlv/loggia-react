@@ -29,7 +29,8 @@ export default function GalleryReducer(state = initialState,action) {
         case types.SET_OVERVIEW:
             return {
                 ...state,
-                overview: action.payload
+                overview: action.payload,
+                force: false
             }
         case types.SET_CURRENT:
             if(state.force) {
