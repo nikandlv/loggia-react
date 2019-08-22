@@ -3,9 +3,9 @@ import Typist from 'react-typist';
 import { withGallery } from "../../data/Reducers/GalleryReducer";
 
 function BottomSheet(props) {
-    const {photos, current, current_index, setOverview, setItem, language} = props
+    const {photos, current, current_index, overview, setOverview, setItem, language} = props
     return (
-        <div className={`bottom-sheet ${props.open?" open":""}`}>
+        <div className={`bottom-sheet ${overview?" open":""}`}>
             <div className="expand-icon-wrapper">
                 <div className="push"/>
                 <div>

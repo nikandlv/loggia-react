@@ -41,6 +41,10 @@ class PhotoZone extends React.Component {
             
             return false
         }
+        if(this.props.overview !== props.overview) {
+            
+            return false
+        }
         if(this.transition === true) {
             this.transition = false
             return true    
