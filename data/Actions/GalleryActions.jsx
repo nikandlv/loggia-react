@@ -22,8 +22,9 @@ export const setOverview = (overview) => (dispatch) => {
         payload: overview
     })
 }
-
+let lock = +new Date();
 export const setCurrent = (current) => (dispatch) => {
+    
     dispatch({
         type:types.SET_CURRENT,
         payload: current
@@ -39,6 +40,15 @@ export const setCurrentForce = (current) => (dispatch) => {
 
 
 export const proceed = () => (dispatch) => {
+    console.log(lock - (+new Date()))
+    let date = +new Date();
+    if(lock === 0) {
+        lock = date
+    }  else if((date - lock) < 100) {
+            lock = date
+        return
+    }
+    lock = date
     let store = Store.getState()
     let current = store.GalleryReducer.current_index
     let total = store.GalleryReducer.photos.length
