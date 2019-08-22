@@ -1,11 +1,14 @@
 ### Loggia-react 
 
-Loggia is a web gallery
+Loggia is a web gallery,
+
+Now better then ever!
 
 * Supports HQ photos without any hiccups
 * As many as photots you want
 * Lazy Load and proper loading wait
 * MultiLanguage with rtl support
+* Redux
 #### Run
 
 `npm install`
