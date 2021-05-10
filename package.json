@@ -29,6 +29,6 @@
     "url-loader": "^2.0.1"
   },
   "devDependencies": {
-    "lodash": ">=4.17.13"
+    "lodash": ">=4.17.21"
   }
 }
